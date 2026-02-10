@@ -16,8 +16,8 @@ export default function Donate(){
         <p className="max-w-2xl mx-auto mb-6">Your donation helps fund outreach programs, school supplies, clean water projects and entrepreneurship training.</p>
         <p className="max-w-xl mx-auto bg-white/10 p-6 rounded mb-6">We currently accept donations via our secure partner pages. For now, please reach out to us or join our volunteer efforts.</p>
         <div className="flex items-center justify-center gap-4">
-          <a href="#Contact" className="bg-white text-brand px-6 py-3 rounded font-semibold">Contact Us</a>
-          <a href="#Volunteer" className="border border-white px-6 py-3 rounded">Volunteer</a>
+          <a href="#Contact" className="bg-white text-brand px-6 py-3 rounded font-semibold">Donate</a>
+          {/* <a href="#Volunteer" className="border border-white px-6 py-3 rounded">Volunteer</a> */}
         </div>
       </div>
     </motion.section>

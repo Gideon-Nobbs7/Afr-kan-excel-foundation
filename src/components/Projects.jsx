@@ -27,8 +27,8 @@ export default function Projects() {
               <div className="mt-6 flex items-center justify-between">
                 <a href="#" className="text-brand font-medium">Learn more</a>
                 <div className="flex gap-2">
-                  <button className="bg-white text-brand border border-brand px-3 py-1 rounded">Volunteer</button>
-                  <button className="bg-brand text-white px-3 py-1 rounded">Donate</button>
+                  {/* <button className="bg-white text-brand border border-brand px-3 py-1 rounded">Volunteer</button>
+                  <button className="bg-brand text-white px-3 py-1 rounded">Donate</button> */}
                 </div>
               </div>
             </div>

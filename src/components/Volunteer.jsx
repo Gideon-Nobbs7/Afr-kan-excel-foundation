@@ -16,7 +16,7 @@ export default function Volunteer(){
       <div className="max-w-2xl mx-auto bg-white p-6 rounded shadow text-center">
         <p className="mb-4">We're excited to have volunteers join our programs. To apply, please contact us so we can match you with the right opportunity.</p>
         <div className="flex items-center justify-center gap-4">
-          <a href="#Contact" className="btn-brand px-6 py-3 rounded font-semibold">Contact Us</a>
+          <a href="#Contact" className="btn-brand px-6 py-3 rounded font-semibold">Join Us</a>
           <a href="#Projects" className="border border-gray-300 px-6 py-3 rounded">See Projects</a>
         </div>
       </div>

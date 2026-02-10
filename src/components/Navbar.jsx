@@ -33,7 +33,7 @@ const [showMobileMenu, setShowMobileMenu] = useState(false)
                 <a href="#Team" className="cursor-pointer hover:text-grey-400">Team</a>
             </ul>
             <div className="hidden md:flex items-center gap-4">
-              <a href="#Donate" className="text-white border border-white px-4 py-2 rounded">Donate</a>
+              {/* <a href="#Donate" className="text-white border border-white px-4 py-2 rounded">Donate</a> */}
               <button className="hidden md:block bg-white px-8 py-2 rounded-full">Sign up</button>
             </div>
             <img onClick={() => setShowMobileMenu(true)} src={assets.menu_icon} alt="" className="md:hidden w-7 cursor-pointer" />

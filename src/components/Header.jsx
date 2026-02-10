@@ -20,7 +20,6 @@ export default function Header() {
               <div className="mt-6 text-sm text-white/80">We partner with local leaders to deliver measurable impact — join us.</div>
               <div className="mt-8 flex gap-4 flex-wrap">
                 <a href="#Programs" className="inline-block bg-white text-brand font-semibold px-6 py-3 rounded shadow hover:scale-[1.02] transition">Our Programs</a>
-                <a href="#Donate" className="inline-block border border-white px-6 py-3 rounded text-white hover:bg-white/10 transition">Donate</a>
               </div>
             </div>
           </motion.div>
