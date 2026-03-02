@@ -13,6 +13,8 @@ import Contact from "./components/Contact"
 import Team from "./components/Team"
 import Footer from "./components/Footer"
 import Signup from "./components/Signup"
+import OurStory from "./components/OurStory"
+import OurWork from "./components/OurWork"
 
 function Home() {
   return (
@@ -38,6 +40,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/story" element={<OurStory />} />
+        <Route path="/work" element={<OurWork />} />
       </Routes>
     </>
   )

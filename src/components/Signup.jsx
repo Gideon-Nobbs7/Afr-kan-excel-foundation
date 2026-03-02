@@ -1,6 +1,7 @@
 import React from "react"
 import { useEffect, useState } from "react"
 import "../styles/signup.css"
+import { ENDPOINTS } from "../config"
 
 export default function Signup() {
   const [countries, setCountries] = useState([])
@@ -110,7 +111,7 @@ export default function Signup() {
     const fullPhone = form.country_code + form.phone_number
     
     try {
-      const res = await fetch("http://localhost:8000/api/members", {
+      const res = await fetch(ENDPOINTS.MEMBERS, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

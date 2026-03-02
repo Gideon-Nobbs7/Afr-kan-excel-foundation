@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { ENDPOINTS } from '../config'
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -21,7 +22,7 @@ export default function Contact() {
     setSuccess(false)
 
     try{
-      const res = await fetch("http://localhost:8000/api/contact",{
+      const res = await fetch(ENDPOINTS.CONTACT, {
         method:"POST",
         headers:{ "Content-Type":"application/json" },
         body: JSON.stringify({
@@ -59,9 +60,20 @@ export default function Contact() {
       </p>
 
       {success && (
-        <p className="text-green-600 text-center mb-4">
+        <div
+          style={{
+            background: "#ecfdf5",
+            border: "1px solid #16a34a",
+            color: "#166534",
+            padding: "0.75rem 1rem",
+            borderRadius: "0.5rem",
+            textAlign: "center",
+            marginBottom: "1rem",
+            fontWeight: 500,
+          }}
+        >
           Message sent successfully!
-        </p>
+        </div>
       )}
 
       <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">

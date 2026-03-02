@@ -36,7 +36,7 @@ export default function Navbar() {
           <a href="#Gallery" className="cursor-pointer hover:text-grey-400">Gallery</a>
           <a href="#Testimonials" className="cursor-pointer hover:text-grey-400">Testimonials</a>
           <a href="#Volunteer" className="cursor-pointer hover:text-grey-400">Volunteer</a>
-          <a href="#Team" className="cursor-pointer hover:text-grey-400">Team</a>
+          {/* <a href="#Team" className="cursor-pointer hover:text-grey-400">Team</a> */}
         </ul>
         <Link to="/signup">
           <button className="hidden md:block bg-white px-8 py-2 rounded-full hover:bg-gray-100 transition text-gray-800">

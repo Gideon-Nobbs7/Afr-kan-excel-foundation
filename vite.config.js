@@ -8,6 +8,6 @@ export default defineConfig({
   server: {
     port: 5176,
     strictPort: true,
-    allowedHosts: [".ngrok-free.app", ".ngrok-free.dev"]
+    allowedHosts: [".ngrok-free.app", ".ngrok-free.dev", ".koyeb.app"]
   }
 })
