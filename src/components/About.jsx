@@ -36,9 +36,10 @@ export default function () {
                     </div>
                 </div>
                 <p className='my-10 max-w-lg text-gray-700'>Afri Kan-excel Foundation is dedicated to fostering sustainable development and empowering communities across Africa through education, entrepreneurship, and social initiatives. Our mission is to create lasting impact by connecting people to opportunities and resources that drive positive change.</p>
-                <Link to="/signup">
-                    <a href="signup" className='btn-brand px-8 py-2 rounded cursor-pointer'>Get involved</a>
-                </Link>
+                <div className="flex items-center gap-10">
+                    <Link to="/story" className='btn-brand px-8 py-2 rounded cursor-pointer'>Our Story</Link>
+                    <Link to="/work" className='btn-brand px-8 py-2 rounded cursor-pointer'>Our Work</Link>
+                </div>
             </div>
         </div>
     </motion.div>
