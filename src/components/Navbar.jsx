@@ -22,11 +22,11 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }} 
       animate={{ opacity: 1, y: 0 }} 
       transition={{ duration: 0.6 }} 
-      className='absolute top-0 left-0 w-full z-10'
+      className='fixed top-0 left-0 w-full z-50'
     >
       <div className='container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent'>
         <Link to="/">
-          <img src={assets.favicon} alt="Afri Kan-excel" className="w-10 h-10 cursor-pointer"/>
+          <img src={assets.logo} alt="Afri Kan-excel" className="w-10 h-10 cursor-pointer"/>
         </Link>
         <ul className="hidden md:flex gap-7 text-white">
           <a href="#Header" className="cursor-pointer hover:text-grey-400">Home</a>
@@ -52,27 +52,37 @@ export default function Navbar() {
       </div>
       
       {/* ----------- mobile menu ------------- */}
-      <div className={`md:hidden ${showMobileMenu ? 'fixed w-full': 'h-0 w-0'} right-0 top-0 bottom-0 overflow-hidden bg-white transition-all`}>
-        <div className='flex justify-end p-6 cursor-pointer'>
-          <img 
-            onClick={() => setShowMobileMenu(false)} 
-            src={assets.cross_icon} 
-            className='w-6' 
-            alt="" 
-          />
+      {/* Mobile menu: backdrop + sliding panel */}
+      <div className={`md:hidden fixed inset-0 z-40 ${showMobileMenu ? '' : 'pointer-events-none'}`}>
+        {/* Backdrop */}
+        <div
+          onClick={() => setShowMobileMenu(false)}
+          className={`absolute inset-0 bg-black/40 transition-opacity ${showMobileMenu ? 'opacity-100' : 'opacity-0'}`}
+        />
+
+        {/* Panel */}
+        <div className={`absolute right-0 top-0 bottom-0 w-3/4 max-w-xs bg-white shadow-lg transform transition-transform ${showMobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className='flex justify-end p-6 cursor-pointer'>
+            <img 
+              onClick={() => setShowMobileMenu(false)} 
+              src={assets.cross_icon} 
+              className='w-6' 
+              alt="close" 
+            />
+          </div>
+          <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
+            <Link to="/" onClick={() => setShowMobileMenu(false)} className='px-4 py-2 rounded-full inline-block'>Home</Link>
+            <a onClick={() => setShowMobileMenu(false)} href="#About" className='px-4 py-2 rounded-full inline-block'>About</a>
+            <a onClick={() => setShowMobileMenu(false)} href="#Programs" className='px-4 py-2 rounded-full inline-block'>Programs</a>
+            <a onClick={() => setShowMobileMenu(false)} href="#Projects" className='px-4 py-2 rounded-full inline-block'>Projects</a>
+            <a onClick={() => setShowMobileMenu(false)} href="#Gallery" className='px-4 py-2 rounded-full inline-block'>Gallery</a>
+            <a onClick={() => setShowMobileMenu(false)} href="#Testimonials" className='px-4 py-2 rounded-full inline-block'>Testimonials</a>
+            <a onClick={() => setShowMobileMenu(false)} href="#Volunteer" className='px-4 py-2 rounded-full inline-block'>Volunteer</a>
+            <a onClick={() => setShowMobileMenu(false)} href="#Team" className='px-4 py-2 rounded-full inline-block'>Team</a>
+            <Link to="/signup" onClick={() => setShowMobileMenu(false)} className='px-4 py-2 rounded-full inline-block bg-blue-600 text-white'>Sign Up</Link>
+          </ul>
         </div>
-        <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
-          <Link to="/" onClick={() => setShowMobileMenu(false)} className='px-4 py-2 rounded-full inline-block'>Home</Link>
-          <a onClick={() => setShowMobileMenu(false)} href="#About" className='px-4 py-2 rounded-full inline-block'>About</a>
-          <a onClick={() => setShowMobileMenu(false)} href="#Programs" className='px-4 py-2 rounded-full inline-block'>Programs</a>
-          <a onClick={() => setShowMobileMenu(false)} href="#Projects" className='px-4 py-2 rounded-full inline-block'>Projects</a>
-          <a onClick={() => setShowMobileMenu(false)} href="#Gallery" className='px-4 py-2 rounded-full inline-block'>Gallery</a>
-          <a onClick={() => setShowMobileMenu(false)} href="#Testimonials" className='px-4 py-2 rounded-full inline-block'>Testimonials</a>
-          <a onClick={() => setShowMobileMenu(false)} href="#Volunteer" className='px-4 py-2 rounded-full inline-block'>Volunteer</a>
-          <a onClick={() => setShowMobileMenu(false)} href="#Team" className='px-4 py-2 rounded-full inline-block'>Team</a>
-          <Link to="/signup" onClick={() => setShowMobileMenu(false)} className='px-4 py-2 rounded-full inline-block bg-blue-600 text-white'>Sign Up</Link>
-        </ul>
-      </div> 
+      </div>
     </motion.div>
   )
 }
