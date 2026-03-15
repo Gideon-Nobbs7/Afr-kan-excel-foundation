@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import foundationLogo from "../assets/foundation-logo.jpg";
+import foundationLogo from "../assets/aerf-logo.png";
 
 /* ── Intersection-observer hook ── */
 function useInView(threshold = 0.1) {
