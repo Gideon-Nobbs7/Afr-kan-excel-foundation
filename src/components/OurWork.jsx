@@ -141,10 +141,10 @@ export default function OurWork() {
             }}
           >
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#111827", marginBottom: "1.25rem" }}>
-              Our Mission
+              Mission
             </h2>
             <p style={{ fontSize: "1.1rem", color: "#374151", lineHeight: 1.8 }}>
-              To catalyze sustainable growth in Africa by enabling communities to self-sustain through innovation and capacity building, amplifying marginalised voices and stories, promoting art and cultural exchange, fostering entrepreneurship, talent retention, and strategic partnerships.
+             To optimize the impact of global and local partnerships by operationalizing African youth through accountable, community-based humanitarian action
             </p>
           </div>
         </Reveal>
@@ -155,7 +155,7 @@ export default function OurWork() {
         <Reveal>
           <div className="card" style={{ width: "100%", maxWidth: "100%", padding: "clamp(1.75rem, 4vw, 3rem)" }}>
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#111827", marginBottom: "2rem", textAlign: "center" }}>
-              Our Vision
+              Vision
             </h2>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "3rem", }}>
@@ -171,9 +171,9 @@ export default function OurWork() {
               {/* text */}
               <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", }}>
                 <p style={{ color: "#374151", lineHeight: 1.75 }}>
-                  At AFRI KAN-EXCEL RENAISSANCE FOUNDATION, our vision is to transform Africa's development trajectory by:
+                  To recalibrate Africa’s development through collaborative, youth-led cultural intelligence and high-integrity stewardship.
                 </p>
-                <ul style={{ paddingLeft: "1.25rem", color: "#374151", lineHeight: 2, fontSize: "1.05rem" }}>
+                {/* <ul style={{ paddingLeft: "1.25rem", color: "#374151", lineHeight: 2, fontSize: "1.05rem" }}>
                   <li>Empowering communities to drive change.</li>
                   <li>Amplifying untold stories that shape our identity.</li>
                   <li>Unlocking youth potential to forge a brighter future.</li>
@@ -188,7 +188,7 @@ export default function OurWork() {
                 </ul>
                 <p style={{ color: "#374151", lineHeight: 1.75, fontSize: "1.05rem" }}>
                   Our foundation believes that true development is rooted in Afrocentric values — one that extends beyond the known benchmarks.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

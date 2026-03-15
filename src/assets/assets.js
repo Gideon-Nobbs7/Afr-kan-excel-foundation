@@ -1,4 +1,5 @@
-import logo from './logo.svg'
+import logo from './logo.jpg'
+import logo2 from './logo-rbg.png'
 import favicon from './favicon.svg'
 import logo_dark from './logo_dark.svg'
 import cross_icon from './cross_icon.svg'
@@ -19,6 +20,7 @@ import afkr10 from './afkr10.jpg'
 
 export const assets = {
   logo,
+  logo2,
   favicon,
   logo_dark,
   cross_icon,

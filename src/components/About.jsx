@@ -39,6 +39,7 @@ export default function () {
                 <div className="flex items-center gap-10">
                     <Link to="/story" className='btn-brand px-8 py-2 rounded cursor-pointer'>Our Story</Link>
                     <Link to="/work" className='btn-brand px-8 py-2 rounded cursor-pointer'>Our Work</Link>
+                    <Link to="/operational-structure" className='btn-brand px-8 py-2 rounded cursor-pointer'>Operational Structure</Link>
                 </div>
             </div>
         </div>

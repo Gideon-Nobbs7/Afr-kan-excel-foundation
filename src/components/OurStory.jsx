@@ -5,27 +5,27 @@ import { Link } from "react-router-dom";
 const paragraphs = [
   {
     id: 1,
-    text: 'AFRI KAN-EXCEL Renaissance Foundation began its journey in 2022 as a charitable organization, driven by a passion to make a positive impact in the lives of others. At its inception, Ms. Precious Arthur Afful played a key role, shouldering significant responsibilities that laid the groundwork for our future endeavors. Today, Ms. Afful serves as the Head of "Community Empowerment through Philanthropy," a vital department within our foundation.',
+    text: "The AFRI KAN-EXCEL RENAISSANCE FOUNDATION(AERF) began its journey in 2022. Driven by a deep passion to close the 'Contextual Deficit' in African development, we started as a mission-led charitable organization. Our early groundwork was forged through the significant dedication of Ms. Precious Arthur Afful, whose leadership was instrumental in shaping our initial community outreach and establishing our footprint in the lives of those we serve.",
   },
   {
     id: 2,
-    text: "As we evolved, our commitment to empowering communities and unlocking Africa's potential only deepened. Our journey gained momentum, and in November 2024, we officially launched as a registered organization, marking a significant milestone in our quest to transform lives.",
+    text: "Our evolution took a decisive step forward on November 30, 2024, with our Official Launching as a registered organization. This date marked our transition from a mission-led initiative to a formal and operational force Following this milestone, Ms. Afful served as the Head of Community Empowerment from November 2024 through January 2026, professionalizing our outreach and ensuring that our philanthropic efforts were aligned with long-term human capital development.",
   },
   {
     id: 3,
-    text: "As we embark on this transformative journey, we draw inspiration from Africa's resilient people, vibrant cultures, and breathtaking landscapes. The Founder, and President ANDREW KWABENA ADJAPONG, together with his team, is committed to unlocking Africa's potential, empowering communities, and promoting African excellence.",
+    text: "Under the leadership of our Founder and President, ADJAPONG ANDREW KWABENA, AERF has moved beyond the traditional NGO model. Andrew has steered the foundation toward a vision of Strategic Mutualism",
   },
   {
     id: 4,
-    text: "As we move forward, we invite you to join us on this extraordinary journey. Together, let us harness the collective power of our creativity, innovation, and passion to create a brighter, more prosperous future for Africa and its people.",
+    text: "We believe in the Wise Use of Collaboration. To date, we have already engaged and provided leadership training for thousands of youth, equipping them with the Cultural Intelligence (CQ) and civic responsibility required to act as the high-integrity stewards. ",
   },
   {
     id: 5,
-    text: "At AFRI KAN-EXCEL Renaissance Foundation, we believe that the future of Africa is bright, and that together, we can achieve greatness. We are committed to working tirelessly to empower communities, promote cultural preservation, and drive social justice.",
+    text: "Today, AERF stands as a last-mile operational force. We draw inspiration from Africa’s resilient heritage not just for the sake of the past, but to build a future. ",
   },
   {
     id: 6,
-    text: "Join us today, and let us work together to build a better tomorrow for Africa!",
+    text: "We invite global partners, investors and visionaries to join us. Together, we are not just bridging gaps; we are building the indigenous solutions that will define the next century of excellence.",
     highlight: true,
   },
 ];
@@ -151,7 +151,7 @@ export default function OurWork() {
             <span
               style={{ color: "var(--brand)", position: "relative", display: "inline-block" }}
             >
-              Work
+              Story
               <span
                 aria-hidden="true"
                 style={{
