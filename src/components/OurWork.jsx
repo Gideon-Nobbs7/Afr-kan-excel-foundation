@@ -164,7 +164,7 @@ export default function OurWork() {
                 <img
                   src={foundationLogo}
                   alt="AFRI KAN-EXCEL Foundation"
-                  style={{ width: "100%", borderRadius: "0.75rem", boxShadow: "0 8px 30px rgba(17,24,39,0.12)", objectFit: "cover", maxHeight: "340px" }}
+                  style={{ width: "100%", borderRadius: "0.75rem", boxShadow: "0 8px 30px rgba(17,24,39,0.12)", objectFit: "cover", maxHeight: "750px" }}
                 />
               </div>
 
