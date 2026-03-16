@@ -60,7 +60,7 @@ export default function Header() {
                 className="inline-block bg-white text-brand font-semibold px-6 py-3 rounded shadow hover:scale-[1.02] transition cursor-pointer"
               >
                 Our Programs
-              </ScrollLink>
+              </ScrollLink> 
             </div>
           </div>
         </motion.div>
