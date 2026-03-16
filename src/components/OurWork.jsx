@@ -38,8 +38,8 @@ function Reveal({ children, delay = 0, className = "" }) {
 /* ── Core values data ── */
 const values = [
   {
-    title: "Authentic Impact",
-    desc: "Embracing creative solutions and cutting-edge approaches to address Africa's challenges and opportunities.",
+    title: "Contextual Clarity",
+    desc: "We prioritize the social map over the policy map.",
     color: "var(--brand)",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -47,8 +47,8 @@ const values = [
     ),
   },
   {
-    title: "Unleash Potentials",
-    desc: "Maintaining the highest standards in everything we do, from program delivery to community engagement.",
+    title: "Ubuntu",
+    desc: "We believe in regional integration and cross-cultural admiration",
     color: "#16a34a",
     icon: (
       <>
@@ -60,8 +60,8 @@ const values = [
     ),
   },
   {
-    title: "Innovation",
-    desc: "Building strong networks and fostering collaboration across the African continent and beyond.",
+    title: "Last-Mile Integrity",
+    desc: "We ensure resources reach their destination with 100% transparency.",
     color: "#2563eb",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -69,8 +69,8 @@ const values = [
     ),
   },
   {
-    title: "Collaboration",
-    desc: "Building strong networks and fostering collaboration across the African continent and beyond.",
+    title: "Transparent Agency",
+    desc: "We move from the politics of speech to the logistics of action.",
     color: "#7c3aed",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -78,12 +78,34 @@ const values = [
     ),
   },
   {
-    title: "Excellence with Integrity",
-    desc: "Upholding transparency and the highest ethical standards in every initiative and partnership we undertake.",
-    color: "#4338ca",
+    title: "Unyielding Innovation",
+    desc: "We use Artivism and Sport (S4D) to solve systemic gaps.",
+    color: "#d4eb04",
     icon: (
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
         d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    ),
+  },
+  {
+    title: "Respect for Heritage",
+    desc: "We treat indigenous knowledge as invisible infrastructure.",
+    color: "#ca3869",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 0 1 .4-2.253M12 8.25a2.25 2.25 0 0 0-2.248 2.146M12 8.25a2.25 2.25 0 0 1 2.248 2.146M8.683 5a6.032 6.032 0 0 1-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0 1 15.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 0 0-.575-1.752M4.921 6a24.048 24.048 0 0 0-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 0 1-5.223 1.082" />
+</svg>
+
+    ),
+  },
+  {
+    title: "Empathetic Collaboration",
+    desc: "We practice strategic mutualism for a win-win Africa.",
+    color: "#d114b2",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+</svg>
+
     ),
   },
 ];
@@ -173,22 +195,17 @@ export default function OurWork() {
                 <p style={{ color: "#374151", lineHeight: 1.75 }}>
                   To recalibrate Africa’s development through collaborative, youth-led cultural intelligence and high-integrity stewardship.
                 </p>
-                {/* <ul style={{ paddingLeft: "1.25rem", color: "#374151", lineHeight: 2, fontSize: "1.05rem" }}>
-                  <li>Empowering communities to drive change.</li>
-                  <li>Amplifying untold stories that shape our identity.</li>
-                  <li>Unlocking youth potential to forge a brighter future.</li>
-                </ul>
-                <p style={{ color: "#374151", lineHeight: 1.75, fontSize: "1.05rem" }}>
-                  We pioneer a holistic approach, shifting the focus from:
+                <p style={{ color: "#374151", lineHeight: 1.75 }}>
+                 Our strength lies in our proven track record of human capital development. To date, we have engaged and provided leadership training for over 3,000 youth across the country. Our curriculum focuses on:
                 </p>
-                <ul style={{ paddingLeft: "1.25rem", color: "#374151", lineHeight: 2, fontSize: "1.05rem" }}>
-                  <li>Steel and concrete to people and culture.</li>
-                  <li>Progress measured by skyscrapers to progress measured by community well-being.</li>
-                  <li>Promoting education and capacity building.</li>
+                 <ul style={{ paddingLeft: "1.25rem", color: "#374151", lineHeight: 2, fontSize: "1.05rem" }}>
+                  <li></li>
+                  <li>Cultural Intelligence (CQ): Navigating the social ecology of our communities.</li>
+                  <li>Civic Responsibility: Moving from "Passive Beneficiaries" to active owners of the nation's future.</li>
                 </ul>
-                <p style={{ color: "#374151", lineHeight: 1.75, fontSize: "1.05rem" }}>
-                  Our foundation believes that true development is rooted in Afrocentric values — one that extends beyond the known benchmarks.
-                </p> */}
+                <ul style={{ paddingLeft: "1.25rem", color: "#374151", lineHeight: 2, fontSize: "1.05rem" }}>
+                  <li>Leadership Logistics: Turning vision into "Boots on the Ground" results.By professionalizing youth agency, we ensure that the "Demographic Dividend" is not just a statistic, but a trained force of High-Integrity Operationalizers.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -200,7 +217,7 @@ export default function OurWork() {
         <Reveal>
           <div style={{ background: "#111827", borderRadius: "0.75rem", padding: "2rem", textAlign: "center" }}>
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "white", margin: 0 }}>
-              Core Values
+              CORE VALUES (C.U.L.T.U.R.E)
             </h2>
           </div>
         </Reveal>
@@ -256,10 +273,16 @@ export default function OurWork() {
       <div style={{ background: "var(--brand)", padding: "5rem 2rem", textAlign: "center" }}>
         <Reveal>
           <h2 style={{ fontSize: "clamp(1.25rem, 3vw, 1.75rem)", fontWeight: 800, color: "white", marginBottom: "1rem" }}>
-            Join Our Mission
+            OUR CONVICTIONS
           </h2>
-          <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.85)", maxWidth: "42rem", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
-            Be part of Afri Kan-Excel Renaissance's story. Whether you're a talent, partner, or supporter, there's a place for you in our community.
+          <p style={{ fontSize: "", color: "rgba(255,255,255,0.85)", maxWidth: "42rem", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
+            Culture is Infrastructure: We believe that Identity and Heritage are not symbolic luxuries; they are the foundation of trust and security. Without building on this indigenous ground, no project can take root.
+          </p>
+          <p style={{ fontSize: "", color: "rgba(255,255,255,0.85)", maxWidth: "42rem", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
+            The Wise Use of Collaboration: We believe in the power of global partnership, but we recognize that aid is only effective when it is Locally Interpreted. We move toward strategic mutualism.
+          </p>
+          <p style={{ fontSize: "", color: "rgba(255,255,255,0.85)", maxWidth: "42rem", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
+            Contractual Leadership: We believe the crisis of leadership is a crisis of accountability. We transition youth from being "Passive Beneficiaries" to "Active Operationalizers" through community-audited performance contracts.
           </p>
           <Link
             to="/signup"

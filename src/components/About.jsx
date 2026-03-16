@@ -19,23 +19,23 @@ export default function () {
             <div className='flex flex-col items-center md:items-start mt-10 text-gray-600'>
                 <div className='grid grid-cols-2 gap-6 md:gap-10 w-full 2xl:pr-28'>
                     <div>
-                        <p className='text-4xl font-medium text-gray-800'>2+</p>
+                        <p className='text-4xl font-medium text-gray-800'>1+</p>
                         <p>Years of Service</p>
                     </div>
                     <div>
-                        <p className='text-4xl font-medium text-gray-800'>50+</p>
+                        <p className='text-4xl font-medium text-gray-800'>20+</p>
                         <p>Communities Reached</p>
                     </div>
                     <div>
-                        <p className='text-4xl font-medium text-gray-800'>100+</p>
+                        <p className='text-4xl font-medium text-gray-800'>40+</p>
                         <p>Volunteers & Partners</p>
                     </div>
                     <div>
-                        <p className='text-4xl font-medium text-gray-800'>60+</p>
+                        <p className='text-4xl font-medium text-gray-800'>10+</p>
                         <p>Projects Completed</p>
                     </div>
                 </div>
-                <p className='my-10 max-w-lg text-gray-700'>Afri Kan-excel Foundation is dedicated to fostering sustainable development and empowering communities across Africa through education, entrepreneurship, and social initiatives. Our mission is to create lasting impact by connecting people to opportunities and resources that drive positive change.</p>
+                <p className='my-10 max-w-lg text-gray-700'>The AFRI KAN-EXCEL RENAISSANCE FOUNDATION (AERF) is a last-mile operational force dedicated to bridging the Contextual Deficit in African development. Based in Ghana with a continental outlook, AERF serves as the "Social Software" that allows global resources to function within the African reality.</p>
                 <div className="flex items-center gap-10">
                     <Link to="/story" className='btn-brand px-8 py-2 rounded cursor-pointer'>Our Story</Link>
                     <Link to="/work" className='btn-brand px-8 py-2 rounded cursor-pointer'>Our Work</Link>

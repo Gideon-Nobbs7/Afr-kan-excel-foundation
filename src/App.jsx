@@ -15,6 +15,7 @@ import Footer from "./components/Footer"
 import Signup from "./components/Signup"
 import OurStory from "./components/OurStory"
 import OurWork from "./components/OurWork"
+import OperationalStructure from "./components/OperationalStructure"
 
 
 
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/story" element={<OurStory />} />
         <Route path="/work" element={<OurWork />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/operational-structure" element={<OperationalStructure />} />
       </Routes>
     </>
   )
