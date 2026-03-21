@@ -40,48 +40,84 @@ export const assets = {
   afkr10,
 }
 
+
 export const projectsData = [
   {
+    id: "community-health-outreach-kumasi",
     title: "Community Health Outreach - Kumasi",
     date: "Jun 2024",
     location: "Kumasi, Ghana",
     description: "Mobile clinics providing basic health screenings and health education to remote communities.",
     image: afkr2,
+ 
+    // ── Extra detail fields ──
+    fullDescription: `In June 2024, our team deployed mobile health clinics across five remote communities in the Ashanti Region. Over 600 residents received free health screenings including blood pressure checks, malaria testing, and nutritional assessments. Community health volunteers were also trained to sustain basic care long after our visit.`,
+    impact: [
+      "600+ residents screened",
+      "5 communities reached",
+      "30 health volunteers trained",
+      "200 malaria test kits distributed",
+    ],
+    gallery: [afkr2],  // add more images here as needed
+    category: "Health",
+    status: "Completed",
   },
   {
+    id: "youth-entrepreneurship-workshop",
     title: "Youth Entrepreneurship Workshop",
     date: "Sep 2024",
     location: "Accra, Ghana",
     description: "Training sessions and mentorship for young entrepreneurs to build sustainable small businesses.",
     image: afkr3,
+ 
+    fullDescription: `Our Youth Entrepreneurship Workshop in Accra brought together 80 young people aged 18–30 for an intensive three-day programme. Participants learned business planning, financial literacy, and digital marketing skills. Ten selected participants received seed funding and ongoing mentorship to launch their ventures.`,
+    impact: [
+      "80 young entrepreneurs trained",
+      "3-day intensive programme",
+      "10 businesses received seed funding",
+      "Ongoing mentorship for all graduates",
+    ],
+    gallery: [afkr3],
+    category: "Education",
+    status: "Completed",
   },
   {
+    id: "school-renovation-supplies-drive",
     title: "School Renovation & Supplies Drive",
     date: "Dec 2023",
     location: "Tamale, Ghana",
     description: "Renovated classrooms and delivered learning materials to improve study conditions for students.",
     image: afkr4,
+ 
+    fullDescription: `In December 2023, volunteers renovated four classrooms at a primary school in Tamale, repainting walls, fixing roofing, and installing new furniture. Over 500 sets of learning materials including textbooks, exercise books, and stationery were donated to students across three grade levels.`,
+    impact: [
+      "4 classrooms fully renovated",
+      "500+ students received supplies",
+      "3 grade levels covered",
+      "20 volunteers participated",
+    ],
+    gallery: [afkr4],
+    category: "Education",
+    status: "Completed",
   },
   {
-    title: "Clean Water Initiative",
-    date: "Mar 2024",
-    location: "Cape Coast, Ghana",
-    description: "Installed community water points and trained local caretakers on maintenance and hygiene.",
-    image: afkr5,
-  },
-  {
-    title: "Women Empowerment Program",
-    date: "Aug 2024",
-    location: "Koforidua, Ghana",
-    description: "Skills training and micro-grants for women to start income-generating activities.",
-    image: afkr6,
-  },
-  {
-    title: "Agriculture & Food Security",
-    date: "Nov 2023",
-    location: "Volta Region, Ghana",
-    description: "Introduced climate-smart farming techniques and provided seedlings to farming cooperatives.",
-    image: afkr7,
+    id: "school-renovation-supplies-drive",
+    title: "School Renovation & Supplies Drive",
+    date: "Dec 2023",
+    location: "Tamale, Ghana",
+    description: "Renovated classrooms and delivered learning materials to improve study conditions for students.",
+    image: afkr4,
+ 
+    fullDescription: `In December 2023, volunteers renovated four classrooms at a primary school in Tamale, repainting walls, fixing roofing, and installing new furniture. Over 500 sets of learning materials including textbooks, exercise books, and stationery were donated to students across three grade levels.`,
+    impact: [
+      "4 classrooms fully renovated",
+      "500+ students received supplies",
+      "3 grade levels covered",
+      "20 volunteers participated",
+    ],
+    gallery: [afkr4],
+    category: "Education",
+    status: "Completed",
   },
 ];
 
@@ -103,10 +139,10 @@ export const testimonialsData = [
     text: "Their school renovation project gave our students a safe and inspiring place to learn. We are very grateful."
   },
   {
-    name: "Fatima Abdul",
+    name: "Alhassan Abdul",
     title: "Small Business Owner",
     image: afkr10,
-    alt: "Portrait of Fatima Abdul",
+    alt: "Portrait of Alhassan Abdul",
     rating: 5,
     text: "After the entrepreneurship workshops I received mentorship and seed funding that helped me grow my business."
   }

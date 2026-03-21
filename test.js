@@ -1,4 +1,4 @@
-import http from 'k6/http'
+ import http from 'k6/http'
 import { check, group, fail } from 'k6';
 
 export const options = {
