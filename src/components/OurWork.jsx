@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import foundationLogo from "../assets/foundation-logo.jpg";
 
 /* ── Intersection-observer hook ── */
-function useInView(threshold = 0.1) {
+function useInView(threshold = 0.08) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -18,15 +18,14 @@ function useInView(threshold = 0.1) {
 }
 
 /* ── Fade-in wrapper ── */
-function Reveal({ children, delay = 0, className = "" }) {
-  const [ref, visible] = useInView(0.08);
+function Reveal({ children, delay = 0 }) {
+  const [ref, visible] = useInView();
   return (
     <div
       ref={ref}
-      className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(30px)",
+        transform: visible ? "translateY(0)" : "translateY(32px)",
         transition: `opacity 0.7s ease ${delay}s, transform 0.7s ease ${delay}s`,
       }}
     >
@@ -35,86 +34,60 @@ function Reveal({ children, delay = 0, className = "" }) {
   );
 }
 
-/* ── Core values data ── */
+/* ── Data ── */
 const values = [
-  {
-    title: "Contextual Clarity",
-    desc: "We prioritize the social map over the policy map.",
-    color: "var(--brand)",
-    icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-    ),
-  },
-  {
-    title: "Ubuntu",
-    desc: "We believe in regional integration and cross-cultural admiration",
-    color: "#16a34a",
-    icon: (
-      <>
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-          d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-          d="M9 12l2 2 4-4" />
-      </>
-    ),
-  },
-  {
-    title: "Last-Mile Integrity",
-    desc: "We ensure resources reach their destination with 100% transparency.",
-    color: "#2563eb",
-    icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-        d="M13 10V3L4 14h7v7l9-11h-7z" />
-    ),
-  },
-  {
-    title: "Transparent Agency",
-    desc: "We move from the politics of speech to the logistics of action.",
-    color: "#7c3aed",
-    icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-    ),
-  },
-  {
-    title: "Unyielding Innovation",
-    desc: "We use Artivism and Sport (S4D) to solve systemic gaps.",
-    color: "#d4eb04",
-    icon: (
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    ),
-  },
-  {
-    title: "Respect for Heritage",
-    desc: "We treat indigenous knowledge as invisible infrastructure.",
-    color: "#ca3869",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 0 1 .4-2.253M12 8.25a2.25 2.25 0 0 0-2.248 2.146M12 8.25a2.25 2.25 0 0 1 2.248 2.146M8.683 5a6.032 6.032 0 0 1-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0 1 15.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 0 0-.575-1.752M4.921 6a24.048 24.048 0 0 0-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 0 1-5.223 1.082" />
-</svg>
+  { title: "Contextual Clarity",       desc: "We prioritize the social map over the policy map.",                 color: "var(--brand)", num: "C" },
+  { title: "Ubuntu",                   desc: "We believe in regional integration and cross-cultural admiration.", color: "#16a34a",      num: "U" },
+  { title: "Last-Mile Integrity",      desc: "We ensure resources reach their destination with 100% transparency.", color: "#2563eb",    num: "L" },
+  { title: "Transparent Agency",       desc: "We move from the politics of speech to the logistics of action.",   color: "#7c3aed",      num: "T" },
+  { title: "Unyielding Innovation",    desc: "We use Artivism and Sport (S4D) to solve systemic gaps.",           color: "#ca8a04",      num: "U" },
+  { title: "Respect for Heritage",     desc: "We treat indigenous knowledge as invisible infrastructure.",         color: "#ca3869",      num: "R" },
+  { title: "Empathetic Collaboration", desc: "We practice strategic mutualism for a win-win Africa.",             color: "#d114b2",      num: "E" },
+];
 
-    ),
+const convictions = [
+  {
+    number: "01",
+    title: "Culture is Infrastructure",
+    body: "Identity and Heritage are not symbolic luxuries — they are the foundation of trust and security. Without building on this indigenous ground, no project can take root.",
   },
   {
-    title: "Empathetic Collaboration",
-    desc: "We practice strategic mutualism for a win-win Africa.",
-    color: "#d114b2",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-</svg>
-
-    ),
+    number: "02",
+    title: "The Wise Use of Collaboration",
+    body: "We believe in the power of global partnership, but we recognize that aid is only effective when it is Locally Interpreted. We move toward strategic mutualism.",
+  },
+  {
+    number: "03",
+    title: "Contractual Leadership",
+    body: "The crisis of leadership is a crisis of accountability. We transition youth from being \"Passive Beneficiaries\" to \"Active Operationalizers\" through community-audited performance contracts.",
   },
 ];
 
-const sectionWrap = {
-  maxWidth: "1180px",
-  width: "100%",
-  margin: "0 auto",
-  padding: "2rem",
+/* ── Shared styles ── */
+const tag = {
+  display: "inline-block",
+  fontSize: "0.68rem",
+  fontWeight: 700,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "var(--brand)",
+  marginBottom: "0.85rem",
+};
+
+const sectionTitle = {
+  fontSize: "clamp(1.9rem, 4vw, 2.75rem)",
+  fontWeight: 800,
+  lineHeight: 1.1,
+  color: "#111827",
+  margin: 0,
+};
+
+const divider = {
+  height: "3px",
+  width: "3rem",
+  borderRadius: "9999px",
+  background: "var(--brand)",
+  margin: "1.25rem 0 0",
 };
 
 /* ══════════════════════════════════════════
@@ -122,199 +95,317 @@ const sectionWrap = {
 ══════════════════════════════════════════ */
 export default function OurWork() {
   return (
-    <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
+    <div style={{ background: "#f9fafb", minHeight: "100vh", fontFamily: "inherit" }}>
 
-      {/* ── HERO ── */}
-      <div style={{ position: "relative", background: "var(--brand)", minHeight: "24rem", display: "flex", alignItems: "center" }}>
-        {/* background image overlay */}
+      {/* ════════════════════════════════
+          HERO — simple, clean, on-brand
+      ════════════════════════════════ */}
+      <div style={{ position: "relative", background: "var(--brand)", overflow: "hidden" }}>
+
+        {/* Subtle background image */}
         <img
           src={foundationLogo}
           alt=""
           aria-hidden="true"
-          style={{
-            position: "absolute", inset: 0,
-            width: "100%", height: "100%",
-            objectFit: "cover", opacity: 0.15,
-          }}
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.1 }}
         />
-        <div style={{ position: "relative", width: "100%", maxWidth: "1180px", margin: "0 auto", padding: "6rem 2rem", textAlign: "center" }}>
-          {/* <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: "1rem" }}>
-            What We Do
-          </p> */}
-          <h1 style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)", fontWeight: 500, color: "white", lineHeight: 1.08, margin: 0 }}>
-          AFRI KAN-EXCEL RENAISSANCE FOUNDATION
+
+        {/* Dot pattern overlay */}
+        <div style={{
+          position: "absolute", inset: 0, opacity: 0.08,
+          backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }} />
+
+        {/* Back button */}
+        <button
+          onClick={() => window.history.back()}
+          style={{
+            position: "absolute", top: "1.75rem", left: "2rem",
+            background: "rgba(255,255,255,0.15)",
+            border: "1px solid rgba(255,255,255,0.3)",
+            borderRadius: "9999px",
+            cursor: "pointer", color: "white",
+            fontSize: "0.85rem", fontWeight: 500,
+            padding: "0.45rem 1.1rem",
+            display: "inline-flex", alignItems: "center", gap: "0.4rem",
+            backdropFilter: "blur(6px)",
+            transition: "background 0.2s",
+            zIndex: 10,
+          }}
+          onMouseOver={e => e.currentTarget.style.background = "rgba(255,255,255,0.25)"}
+          onMouseOut={e => e.currentTarget.style.background = "rgba(255,255,255,0.15)"}
+        >
+          ← Back
+        </button>
+
+        {/* Hero text — centered, clean */}
+        <div style={{ position: "relative", zIndex: 2, maxWidth: "1180px", margin: "0 auto", padding: "7rem 2rem 5rem", textAlign: "center" }}>
+          <p style={{ ...tag, color: "rgba(255,255,255,0.65)" }}>Who We Are</p>
+          <h1 style={{
+            fontSize: "clamp(2.2rem, 5vw, 3.75rem)",
+            fontWeight: 800,
+            color: "white",
+            lineHeight: 1.1,
+            margin: "0 auto 1.25rem",
+            maxWidth: "720px",
+            letterSpacing: "-0.01em",
+          }}>
+            AFRI KAN-EXCEL RENAISSANCE FOUNDATION
           </h1>
-          <div style={{ margin: "1.5rem auto 0", height: "3px", width: "4rem", borderRadius: "9999px", background: "rgba(255,255,255,0.5)" }} />
+          <p style={{
+            fontSize: "1.1rem",
+            color: "rgba(255,255,255,0.75)",
+            lineHeight: 1.75,
+            maxWidth: "520px",
+            margin: "0 auto",
+          }}>
+            A last-mile operational force recalibrating Africa's development through youth, culture, and high-integrity action.
+          </p>
+          {/* Bottom white fade into page */}
+          <div style={{ marginTop: "4rem", height: "2px", width: "4rem", borderRadius: "9999px", background: "rgba(255,255,255,0.4)", margin: "3rem auto 0" }} />
         </div>
       </div>
 
-      {/* ── MISSION — overlaps hero ── */}
-      <div style={sectionWrap}>
-        <Reveal>
-          <div
-            className="card"
-            style={{
-              marginTop: "-5rem",
-              padding: "clamp(1.75rem, 4vw, 3rem)",
-              // borderTop: "4px solid var(--brand)",
-              textAlign: "center",
-              width: "100%", 
-              maxWidth: "100%"
-            }}
-          >
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#111827", marginBottom: "1.25rem" }}>
-              Mission
-            </h2>
-            <p style={{ fontSize: "1.1rem", color: "#374151", lineHeight: 1.8 }}>
-             To optimize the impact of global and local partnerships by operationalizing African youth through accountable, community-based humanitarian action
-            </p>
-          </div>
-        </Reveal>
+
+      {/* ════════════════════════════════
+          MISSION + VISION
+      ════════════════════════════════ */}
+      <div id="mission" style={{ maxWidth: "1180px", margin: "0 auto", padding: "6rem 2rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem" }}>
+
+          <Reveal delay={0}>
+            <div style={{
+              background: "white", borderRadius: "1rem", padding: "2.5rem",
+              boxShadow: "0 4px 24px rgba(17,24,39,0.07)", borderTop: "4px solid var(--brand)", height: "100%",
+            }}>
+              <p style={tag}>Mission</p>
+              <h2 style={{ ...sectionTitle, fontSize: "1.6rem", marginBottom: "1.25rem" }}>What We Do</h2>
+              <p style={{ color: "#374151", lineHeight: 1.85, fontSize: "1.05rem", fontStyle: "italic" }}>
+                "To optimize the impact of global and local partnerships by operationalizing African youth through accountable, community-based humanitarian action."
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div style={{
+              background: "#111827", borderRadius: "1rem", padding: "2.5rem",
+              boxShadow: "0 4px 24px rgba(17,24,39,0.15)", borderTop: "4px solid var(--brand)", height: "100%",
+            }}>
+              <p style={{ ...tag, color: "rgba(255,255,255,0.45)" }}>Vision</p>
+              <h2 style={{ ...sectionTitle, fontSize: "1.6rem", color: "white", marginBottom: "1.25rem" }}>Where We're Going</h2>
+              <p style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.85, fontSize: "1.05rem", fontStyle: "italic" }}>
+                "To recalibrate Africa's development through collaborative, youth-led cultural intelligence and high-integrity stewardship."
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </div>
 
-      {/* ── VISION ── */}
-      <div style={sectionWrap}>
-        <Reveal>
-          <div className="card" style={{ width: "100%", maxWidth: "100%", padding: "clamp(1.75rem, 4vw, 3rem)" }}>
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "#111827", marginBottom: "2rem", textAlign: "center" }}>
-              Vision
-            </h2>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "3rem", }}>
-              {/* image */}
-              <div>
-                <img
-                  src={foundationLogo}
-                  alt="AFRI KAN-EXCEL Foundation"
-                  style={{ width: "100%", borderRadius: "0.75rem", boxShadow: "0 8px 30px rgba(17,24,39,0.12)", objectFit: "cover", maxHeight: "340px" }}
-                />
-              </div>
+      {/* ════════════════════════════════
+          STATS STRIP
+      ════════════════════════════════ */}
+      
 
-              {/* text */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", }}>
-                <p style={{ color: "#374151", lineHeight: 1.75 }}>
-                  To recalibrate Africa’s development through collaborative, youth-led cultural intelligence and high-integrity stewardship.
-                </p>
-                <p style={{ color: "#374151", lineHeight: 1.75 }}>
-                 Our strength lies in our proven track record of human capital development. To date, we have engaged and provided leadership training for over 3,000 youth across the country. Our curriculum focuses on:
-                </p>
-                 <ul style={{ paddingLeft: "1.25rem", color: "#374151", lineHeight: 2, fontSize: "1.05rem" }}>
-                  <li></li>
-                  <li>Cultural Intelligence (CQ): Navigating the social ecology of our communities.</li>
-                  <li>Civic Responsibility: Moving from "Passive Beneficiaries" to active owners of the nation's future.</li>
-                </ul>
-                <ul style={{ paddingLeft: "1.25rem", color: "#374151", lineHeight: 2, fontSize: "1.05rem" }}>
-                  <li>Leadership Logistics: Turning vision into "Boots on the Ground" results.By professionalizing youth agency, we ensure that the "Demographic Dividend" is not just a statistic, but a trained force of High-Integrity Operationalizers.</li>
-                </ul>
+      {/* ════════════════════════════════
+          CURRICULUM
+      ════════════════════════════════ */}
+      <div style={{ maxWidth: "1180px", margin: "0 auto", padding: "6rem 2rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
+
+          <Reveal delay={0}>
+            <div style={{ position: "relative" }}>
+              <img
+                src={foundationLogo}
+                alt="AFRI KAN-EXCEL Foundation"
+                style={{ width: "100%", borderRadius: "1rem", objectFit: "cover", maxHeight: "420px", boxShadow: "0 20px 60px rgba(17,24,39,0.15)" }}
+              />
+              <div style={{
+                position: "absolute", bottom: "-1.25rem", right: "-1rem",
+                background: "#111827", color: "white",
+                borderRadius: "0.75rem", padding: "1rem 1.5rem",
+                boxShadow: "0 8px 24px rgba(0,0,0,0.2)", textAlign: "center",
+              }}>
+                <div style={{ fontSize: "1.5rem", fontWeight: 900, color: "var(--brand)" }}>3,000+</div>
+                <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.6)", marginTop: "0.2rem", letterSpacing: "0.06em" }}>YOUTH REACHED</div>
               </div>
             </div>
-          </div>
-        </Reveal>
-      </div>
+          </Reveal>
 
-      {/* ── CORE VALUES HEADER ── */}
-      <div style={{ ...sectionWrap, paddingTop: 0 }}>
-        <Reveal>
-          <div style={{ background: "#111827", borderRadius: "0.75rem", padding: "2rem", textAlign: "center" }}>
-            <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 700, color: "white", margin: 0 }}>
-              CORE VALUES (C.U.L.T.U.R.E)
-            </h2>
-          </div>
-        </Reveal>
-      </div>
-
-      {/* ── CORE VALUES GRID ── */}
-      <div style={{ maxWidth: "1180px", margin: "0 auto", padding: "0 2rem 5rem" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "1.5rem" }}>
-          {values.map((v, i) => (
-            <Reveal key={v.title} delay={i * 0.08}>
-              <div
-                className="card"
-                style={{
-                  padding: "1.75rem",
-                  textAlign: "center",
-                  height: "100%",
-                  transition: "transform 0.25s, box-shadow 0.25s",
-                  cursor: "default",
-                }}
-                onMouseOver={e => {
-                  e.currentTarget.style.transform = "translateY(-4px)";
-                  e.currentTarget.style.boxShadow = "0 12px 32px rgba(17,24,39,0.12)";
-                }}
-                onMouseOut={e => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "";
-                }}
-              >
-                {/* icon circle */}
-                <div style={{
-                  width: "3rem", height: "3rem", borderRadius: "9999px",
-                  background: v.color,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  margin: "0 auto 1rem",
-                }}>
-                  <svg style={{ width: "1.4rem", height: "1.4rem", color: "white" }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {v.icon}
-                  </svg>
-                </div>
-                <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "#111827", marginBottom: "0.6rem" }}>
-                  {v.title}
-                </h3>
-                <p style={{ color: "#6b7280", lineHeight: 1.7, fontSize: "0.95rem", margin: 0 }}>
-                  {v.desc}
-                </p>
+          <Reveal delay={0.15}>
+            <div>
+              <p style={tag}>Our Curriculum</p>
+              <h2 style={{ ...sectionTitle, marginBottom: "1.5rem" }}>Building the<br />Next Generation</h2>
+              <p style={{ color: "#6b7280", lineHeight: 1.8, marginBottom: "2rem" }}>
+                Our leadership curriculum turns passive beneficiaries into active operationalizers — ensuring the Demographic Dividend is a trained force of high-integrity leaders.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                {[
+                  { title: "Cultural Intelligence (CQ)", desc: "Navigating the social ecology of our communities." },
+                  { title: "Civic Responsibility", desc: "Moving from passive beneficiaries to active nation builders." },
+                  { title: "Leadership Logistics", desc: "Turning vision into boots-on-the-ground results." },
+                ].map((item, i) => (
+                  <div key={i} style={{
+                    display: "flex", gap: "1rem", alignItems: "flex-start",
+                    background: "white", borderRadius: "0.75rem",
+                    padding: "1rem 1.25rem",
+                    boxShadow: "0 2px 12px rgba(17,24,39,0.06)",
+                    borderLeft: "3px solid var(--brand)",
+                  }}>
+                    <div style={{
+                      width: "2rem", height: "2rem", borderRadius: "9999px",
+                      background: "var(--brand)", color: "white",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      fontWeight: 900, fontSize: "0.75rem", flexShrink: 0,
+                    }}>
+                      {i + 1}
+                    </div>
+                    <div>
+                      <div style={{ fontWeight: 700, color: "#111827", fontSize: "0.95rem" }}>{item.title}</div>
+                      <div style={{ color: "#6b7280", fontSize: "0.875rem", marginTop: "0.2rem" }}>{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
         </div>
       </div>
 
-      {/* ── CALL TO ACTION ── */}
-      <div style={{ background: "var(--brand)", padding: "5rem 2rem", textAlign: "center" }}>
-        <Reveal>
-          <h2 style={{ fontSize: "clamp(1.25rem, 3vw, 1.75rem)", fontWeight: 800, color: "white", marginBottom: "1rem" }}>
-            OUR CONVICTIONS
-          </h2>
-          <p style={{ fontSize: "", color: "rgba(255,255,255,0.85)", maxWidth: "42rem", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
-            Culture is Infrastructure: We believe that Identity and Heritage are not symbolic luxuries; they are the foundation of trust and security. Without building on this indigenous ground, no project can take root.
-          </p>
-          <p style={{ fontSize: "", color: "rgba(255,255,255,0.85)", maxWidth: "42rem", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
-            The Wise Use of Collaboration: We believe in the power of global partnership, but we recognize that aid is only effective when it is Locally Interpreted. We move toward strategic mutualism.
-          </p>
-          <p style={{ fontSize: "", color: "rgba(255,255,255,0.85)", maxWidth: "42rem", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
-            Contractual Leadership: We believe the crisis of leadership is a crisis of accountability. We transition youth from being "Passive Beneficiaries" to "Active Operationalizers" through community-audited performance contracts.
-          </p>
-          <Link
-            to="/signup"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              padding: "0.9rem 2.5rem",
-              borderRadius: "0.5rem",
-              background: "#111827",
-              color: "white",
-              fontWeight: 700,
-              fontSize: "1rem",
-              textDecoration: "none",
-              boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
-              transition: "background 0.2s, transform 0.2s",
-            }}
-            onMouseOver={e => {
-              e.currentTarget.style.background = "#1f2937";
-              e.currentTarget.style.transform = "translateY(-2px)";
-            }}
-            onMouseOut={e => {
-              e.currentTarget.style.background = "#111827";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            Get Involved
-            <svg xmlns="http://www.w3.org/2000/svg" style={{ width: "1rem", height: "1rem" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </Reveal>
+
+      {/* ════════════════════════════════
+          CORE VALUES
+      ════════════════════════════════ */}
+      <div style={{ background: "#f3f4f6", padding: "6rem 2rem" }}>
+        <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: "4rem" }}>
+              <p style={tag}>Our DNA</p>
+              <h2 style={sectionTitle}>Core Values</h2>
+              <p style={{ color: "#6b7280", marginTop: "1rem", fontSize: "1rem" }}>
+                Every letter of <strong style={{ color: "#111827" }}>C.U.L.T.U.R.E</strong> represents a pillar we stand on.
+              </p>
+              <div style={divider} />
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.25rem" }}>
+            {values.map((v, i) => (
+              <Reveal key={v.title} delay={i * 0.07}>
+                <div
+                  style={{
+                    background: "white", borderRadius: "1rem", padding: "1.75rem",
+                    boxShadow: "0 2px 12px rgba(17,24,39,0.06)",
+                    display: "flex", gap: "1.25rem", alignItems: "flex-start",
+                    transition: "transform 0.25s, box-shadow 0.25s", cursor: "default",
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(17,24,39,0.12)"; }}
+                  onMouseOut={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 2px 12px rgba(17,24,39,0.06)"; }}
+                >
+                  <div style={{
+                    width: "3rem", height: "3rem", flexShrink: 0,
+                    borderRadius: "0.6rem", background: v.color,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontWeight: 900, fontSize: "1.2rem", color: "white",
+                  }}>
+                    {v.num}
+                  </div>
+                  <div>
+                    <h3 style={{ fontWeight: 700, color: "#111827", fontSize: "1rem", marginBottom: "0.35rem" }}>{v.title}</h3>
+                    <p style={{ color: "#6b7280", fontSize: "0.875rem", lineHeight: 1.65, margin: 0 }}>{v.desc}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+
+
+      {/* ════════════════════════════════
+          CONVICTIONS
+      ════════════════════════════════ */}
+      <div style={{ background: "#111827", padding: "7rem 2rem" }}>
+        <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: "4.5rem" }}>
+              <p style={{ ...tag, color: "rgba(255,255,255,0.4)" }}>What We Stand For</p>
+              <h2 style={{ ...sectionTitle, color: "white" }}>Our Convictions</h2>
+              <div style={{ ...divider, margin: "1.25rem auto 0" }} />
+            </div>
+          </Reveal>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            {convictions.map((c, i) => (
+              <Reveal key={c.number} delay={i * 0.12}>
+                <div
+                  style={{
+                    display: "grid", gridTemplateColumns: "auto 1fr", gap: "2rem", alignItems: "start",
+                    background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)",
+                    borderLeft: "4px solid var(--brand)", borderRadius: "0.75rem", padding: "2rem 2.5rem",
+                    transition: "background 0.2s",
+                  }}
+                  onMouseOver={e => e.currentTarget.style.background = "rgba(255,255,255,0.08)"}
+                  onMouseOut={e => e.currentTarget.style.background = "rgba(255,255,255,0.04)"}
+                >
+                  <div style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", fontWeight: 900, color: "var(--brand)", opacity: 0.3, lineHeight: 1, minWidth: "3.5rem" }}>
+                    {c.number}
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.5rem)", fontWeight: 700, color: "white", marginBottom: "0.75rem", lineHeight: 1.2 }}>
+                      {c.title}
+                    </h3>
+                    <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.8, margin: 0 }}>
+                      {c.body}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </div>
+
+
+      {/* ════════════════════════════════
+          FINAL CTA
+      ════════════════════════════════ */}
+      <div style={{ background: "var(--brand)", padding: "7rem 2rem", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <div style={{
+          position: "absolute", inset: 0, opacity: 0.07,
+          backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }} />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Reveal>
+            <p style={{ ...tag, color: "rgba(255,255,255,0.6)", marginBottom: "1rem" }}>Join the Movement</p>
+            <h2 style={{ fontSize: "clamp(2rem, 5vw, 3.25rem)", fontWeight: 900, color: "white", lineHeight: 1.1, marginBottom: "1.25rem" }}>
+              Ready to Build<br />Africa's Future?
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "1.1rem", maxWidth: "480px", margin: "0 auto 2.5rem", lineHeight: 1.7 }}>
+              We're not just bridging gaps — we're building indigenous solutions that will define the next century of excellence.
+            </p>
+            <Link
+              to="/signup"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                padding: "1rem 2.75rem", borderRadius: "0.5rem",
+                background: "#111827", color: "white",
+                fontWeight: 700, fontSize: "1rem", textDecoration: "none",
+                boxShadow: "0 6px 28px rgba(0,0,0,0.3)",
+                transition: "background 0.2s, transform 0.2s",
+              }}
+              onMouseOver={e => { e.currentTarget.style.background = "#1f2937"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+              onMouseOut={e => { e.currentTarget.style.background = "#111827"; e.currentTarget.style.transform = "translateY(0)"; }}
+            >
+              Get Involved
+              <svg xmlns="http://www.w3.org/2000/svg" style={{ width: "1rem", height: "1rem" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </Reveal>
+        </div>
       </div>
 
     </div>

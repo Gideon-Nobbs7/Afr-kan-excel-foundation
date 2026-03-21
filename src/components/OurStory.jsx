@@ -5,30 +5,87 @@ import { Link } from "react-router-dom";
 const paragraphs = [
   {
     id: 1,
-    text: "The AFRI KAN-EXCEL RENAISSANCE FOUNDATION(AERF) began its journey in 2022. Driven by a deep passion to close the 'Contextual Deficit' in African development, we started as a mission-led charitable organization. Our early groundwork was forged through the significant dedication of Ms. Precious Arthur Afful, whose leadership was instrumental in shaping our initial community outreach and establishing our footprint in the lives of those we serve.",
+    segments: [
+      { text: "The " },
+      { text: "AFRI KAN-EXCEL RENAISSANCE FOUNDATION (AERF)", bold: true },
+      { text: " began its journey in " },
+      { text: "2022", bold: true },
+      { text: ". Driven by a deep passion to close the " },
+      { text: "'Contextual Deficit'", highlight: true },
+      { text: " in African development, we started as a mission-led charitable organization. Our early groundwork was forged through the significant dedication of " },
+      { text: "Ms. Precious Arthur Afful", bold: true },
+      { text: ", whose leadership was instrumental in shaping our initial community outreach and establishing our footprint in the lives of those we serve." },
+    ],
   },
   {
     id: 2,
-    text: "Our evolution took a decisive step forward on November 30, 2024, with our Official Launching as a registered organization. This date marked our transition from a mission-led initiative to a formal and operational force Following this milestone, Ms. Afful served as the Head of Community Empowerment from November 2024 through January 2026, professionalizing our outreach and ensuring that our philanthropic efforts were aligned with long-term human capital development.",
+    segments: [
+      { text: "Our evolution took a decisive step forward on " },
+      { text: "November 30, 2024", bold: true },
+      { text: ", with our " },
+      { text: "Official Launching", highlight: true },
+      { text: " as a registered organization. This date marked our transition from a mission-led initiative to a formal and operational force. Following this milestone, Ms. Afful served as the " },
+      { text: "Head of Community Empowerment", bold: true },
+      { text: " from November 2024 through January 2026, professionalizing our outreach and ensuring that our philanthropic efforts were aligned with long-term human capital development." },
+    ],
   },
   {
     id: 3,
-    text: "Under the leadership of our Founder and President, ADJAPONG ANDREW KWABENA, AERF has moved beyond the traditional NGO model. Andrew has steered the foundation toward a vision of Strategic Mutualism",
+    segments: [
+      { text: "Under the leadership of our Founder and President, " },
+      { text: "ADJAPONG ANDREW KWABENA", bold: true },
+      { text: ", AERF has moved beyond the traditional NGO model. Andrew has steered the foundation toward a vision of " },
+      { text: "Strategic Mutualism", bold: true, highlight: true },
+      { text: "." },
+    ],
   },
   {
     id: 4,
-    text: "We believe in the Wise Use of Collaboration. To date, we have already engaged and provided leadership training for thousands of youth, equipping them with the Cultural Intelligence (CQ) and civic responsibility required to act as the high-integrity stewards. ",
+    segments: [
+      { text: "We believe in the " },
+      { text: "Wise Use of Collaboration", bold: true },
+      { text: ". To date, we have already engaged and provided " },
+      { text: "leadership training for thousands of youth", highlight: true },
+      { text: ", equipping them with the " },
+      { text: "Cultural Intelligence (CQ)", bold: true },
+      { text: " and civic responsibility required to act as high-integrity stewards." },
+    ],
   },
   {
     id: 5,
-    text: "Today, AERF stands as a last-mile operational force. We draw inspiration from Africa’s resilient heritage not just for the sake of the past, but to build a future. ",
+    segments: [
+      { text: "Today, AERF stands as a " },
+      { text: "last-mile operational force", bold: true },
+      { text: ". We draw inspiration from " },
+      { text: "Africa's resilient heritage", highlight: true },
+      { text: " — not just for the sake of the past, but to build a future." },
+    ],
   },
   {
     id: 6,
-    text: "We invite global partners, investors and visionaries to join us. Together, we are not just bridging gaps; we are building the indigenous solutions that will define the next century of excellence.",
-    highlight: true,
+    isClosing: true,
+    segments: [
+      { text: "We invite " },
+      { text: "global partners, investors and visionaries", bold: true },
+      { text: " to join us. Together, we are not just bridging gaps; we are building the " },
+      { text: "indigenous solutions", highlight: true },
+      { text: " that will define the next century of excellence." },
+    ],
   },
 ];
+
+function Segment({ text, bold, highlight }) {
+  const style = {
+    fontWeight: bold ? 700 : "inherit",
+    ...(highlight && {
+      background: "linear-gradient(120deg, rgba(139,94,60,0.15) 0%, rgba(139,94,60,0.08) 100%)",
+      borderRadius: "3px",
+      padding: "0 3px",
+      color: "var(--brand)",
+    }),
+  };
+  return <span style={style}>{text}</span>;
+}
 
 function useInView(threshold = 0.05) {
   const ref = useRef(null);
@@ -51,7 +108,7 @@ function useInView(threshold = 0.05) {
   return [ref, visible];
 }
 
-function AnimatedParagraph({ text, highlight, index }) {
+function AnimatedParagraph({ segments, isClosing, index }) {
   const [ref, visible] = useInView(0.05);
 
   return (
@@ -67,18 +124,20 @@ function AnimatedParagraph({ text, highlight, index }) {
         style={{
           lineHeight: 1.75,
           fontSize: "1.05rem",
-          color: highlight ? "var(--brand)" : "#374151",
-          fontWeight: highlight ? 600 : 400,
+          color: isClosing ? "var(--brand)" : "#374151",
+          fontWeight: isClosing ? 600 : 400,
           margin: 0,
         }}
       >
-        {text}
+        {segments.map((seg, i) => (
+          <Segment key={i} {...seg} />
+        ))}
       </p>
     </div>
   );
 }
 
-export default function OurWork() {
+export default function OurStory() {
   const [headerRef, headerVisible] = useInView(0.1);
 
   return (
@@ -114,6 +173,28 @@ export default function OurWork() {
           boxSizing: "border-box",
         }}
       >
+
+        {/* ── Back link ── */}
+        <button
+          onClick={() => window.history.back()}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: "var(--brand)",
+            fontSize: "0.9rem",
+            fontWeight: 500,
+            padding: 0,
+            marginBottom: "1.5rem",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            alignSelf: "flex-start",
+          }}
+        >
+          ← Back
+        </button>
+
         {/* ── Header ── */}
         <div
           ref={headerRef}
@@ -180,7 +261,7 @@ export default function OurWork() {
           />
         </div>
 
-        {/* ── Card — grows to fill page ── */}
+        {/* ── Card ── */}
         <div
           style={{
             flex: 1,
@@ -193,7 +274,6 @@ export default function OurWork() {
             padding: "clamp(2rem, 5vw, 3.5rem)",
           }}
         >
-          {/* Paragraphs spread evenly */}
           <div
             style={{
               flex: 1,
@@ -206,14 +286,14 @@ export default function OurWork() {
             {paragraphs.map((p, i) => (
               <AnimatedParagraph
                 key={p.id}
-                text={p.text}
-                highlight={p.highlight}
+                segments={p.segments}
+                isClosing={p.isClosing}
                 index={i}
               />
             ))}
           </div>
 
-          {/* CTA anchored to bottom of card */}
+          {/* CTA */}
           <div style={{ display: "flex", justifyContent: "center", paddingTop: "2.5rem" }}>
             <Link
               to="/signup"

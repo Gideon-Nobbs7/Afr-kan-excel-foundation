@@ -1,300 +1,149 @@
-// Navbar.jsx
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { assets } from '../assets/assets'
-import { motion } from 'framer-motion'
 import { Link as ScrollLink } from 'react-scroll'
+import { assets } from '../assets/assets'
+
+const sections = ["Header", "About", "Programs", "Testimonials", "Volunteer", "Team", "Gallery", "Contact"]
+
+function NavItem({ sec, isHome, onClick }) {
+  const label = sec === "Header" ? "Home" : sec
+
+  if (sec === "Gallery") {
+    return (
+      <Link to="/gallery" onClick={onClick} className="cursor-pointer hover:text-gray-400 transition-colors">
+        Gallery
+      </Link>
+    )
+  }
+
+  if (isHome) {
+    return (
+      <ScrollLink to={sec} smooth duration={900} onClick={onClick} className="cursor-pointer hover:text-gray-400 transition-colors">
+        {label}
+      </ScrollLink>
+    )
+  }
+
+  return (
+    <Link to={`/#${sec.toLowerCase()}`} onClick={onClick} className="cursor-pointer hover:text-gray-400 transition-colors">
+      {label}
+    </Link>
+  )
+}
 
 export default function Navbar({ isSticky }) {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const location = useLocation()
+  const isHome = location.pathname === "/"
 
-  // Lock scroll when mobile menu is open
+  const closeMobileMenu = () => setShowMobileMenu(false)
+
   useEffect(() => {
     document.body.style.overflow = showMobileMenu ? 'hidden' : 'auto'
     return () => { document.body.style.overflow = 'auto' }
   }, [showMobileMenu])
 
-  const location = useLocation()
-  const isHome = location.pathname === "/"
-
-  const sections = ["Header", "About", "Programs", "Testimonials", "Volunteer", "Team", "Gallery", "Contact"]
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        isSticky ? 'bg-white shadow-md' : 'bg-transparent'
-      }`}
-    >
-      <div className='container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32'>
-        {/* Logo */}
-        <Link to="/">
-          <img src={assets.logo2} alt="Afri Kan-excel" className={`w-10 h-10 cursor-pointer`} />
-        </Link>
+    <>
+      {/* ── Navbar bar ── */}
+      <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isSticky ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+        <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32">
 
-        {/* Desktop Menu */}
-        <ul className={`hidden md:flex gap-7 ${isSticky ? 'text-gray-800' : 'text-white'}`}>
-          {sections.map((sec) => {
-            if (sec === "Gallery") {
-              return (
-                <Link key={sec} to="/gallery" className="cursor-pointer hover:text-gray-400">
-                  Gallery
-                </Link>
-              )
-            } else if (isHome) {
-              return (
-                <ScrollLink
-                  key={sec}
-                  to={sec}
-                  smooth={true}
-                  duration={900}
-                  className="cursor-pointer hover:text-gray-400"
-                >
-                  {sec === "Header" ? "Home" : sec}
-                </ScrollLink>
-              )
-            } else {
-              return (
-                <Link key={sec} to={`/#${sec.toLowerCase()}`} className="cursor-pointer hover:text-gray-400">
-                  {sec === "Header" ? "Home" : sec}
-                </Link>
-              )
-            }
-          })}
-        </ul>
+          {/* Logo + sticky mobile title */}
+          <Link to="/" className="flex items-center gap-2.5">
+            <img src={assets.logo2} alt="Afri Kan-Excel" className="w-10 h-10 cursor-pointer flex-shrink-0" />
 
-        {/* Sign Up Button */}
-        <Link to="/signup">
-          <button className={`hidden md:block px-8 py-2 rounded-full transition ${
-            isSticky ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-white text-gray-800 hover:bg-gray-100'
-          }`}>
-            Sign Up
-          </button>
-        </Link>
+            {/* Only visible on mobile when sticky */}
+            <div
+              className={`md:hidden flex flex-col transition-all duration-300 overflow-hidden ${
+                isSticky ? 'max-w-[200px] opacity-100' : 'max-w-0 opacity-0'
+              }`}
+            >
+              <span className="text-sm font-bold text-gray-800 leading-tight whitespace-nowrap">
+                Afri Kan-Excel
+              </span>
+              <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand whitespace-nowrap">
+                Renaissance Foundation
+              </span>
+            </div>
+          </Link>
 
-        {/* Mobile Menu Icon */}
-        <img
-          onClick={() => setShowMobileMenu(true)}
-          src={assets.menu_icon}
-          alt="menu"
-          className={`md:hidden w-7 cursor-pointer ${isSticky ? '' : 'invert'}`}
-        />
+          {/* Desktop nav */}
+          <ul className={`hidden md:flex gap-7 ${isSticky ? 'text-gray-800' : 'text-white'}`}>
+            {sections.map(sec => (
+              <NavItem key={sec} sec={sec} isHome={isHome} />
+            ))}
+          </ul>
 
-        {/* Mobile Menu Panel */}
-        <div className={`md:hidden fixed inset-0 z-40 ${showMobileMenu ? '' : 'pointer-events-none'}`}>
-          {/* Backdrop */}
-          <div
-            onClick={() => setShowMobileMenu(false)}
-            className={`absolute inset-0 bg-black/40 transition-opacity ${showMobileMenu ? 'opacity-100' : 'opacity-0'}`}
+          {/* Desktop sign up */}
+          <Link to="/signup" className="hidden md:block">
+            <button className={`px-8 py-2 rounded-full transition ${isSticky ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-white text-gray-800 hover:bg-gray-100'}`}>
+              Sign Up
+            </button>
+          </Link>
+
+          {/* Mobile hamburger */}
+          <img
+            src={assets.menu_icon}
+            alt="Open menu"
+            onClick={() => setShowMobileMenu(true)}
+            className={`md:hidden w-7 cursor-pointer transition-all ${isSticky ? 'brightness-0' : 'invert'}`}
           />
 
-          {/* Sliding Panel */}
-          <div className={`absolute right-0 top-0 bottom-0 w-3/4 max-w-xs bg-white shadow-lg transform transition-transform ${showMobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
-            <div className='flex justify-end p-6 cursor-pointer'>
-              <img onClick={() => setShowMobileMenu(false)} src={assets.cross_icon} className='w-6' alt="close" />
-            </div>
-
-            <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
-              {sections.map((sec) => {
-                if (sec === "Gallery") {
-                  return (
-                    <Link
-                      key={sec}
-                      to="/gallery"
-                      onClick={() => setShowMobileMenu(false)}
-                      className='px-4 py-2 rounded-full inline-block cursor-pointer hover:bg-gray-100 w-full text-center'
-                    >
-                      Gallery
-                    </Link>
-                  )
-                } else if (isHome) {
-                  return (
-                    <ScrollLink
-                      key={sec}
-                      to={sec}
-                      smooth={true}
-                      duration={900}
-                      onClick={() => setShowMobileMenu(false)}
-                      className='px-4 py-2 rounded-full inline-block cursor-pointer hover:bg-gray-100 w-full text-center'
-                    >
-                      {sec === "Header" ? "Home" : sec}
-                    </ScrollLink>
-                  )
-                } else {
-                  return (
-                    <Link
-                      key={sec}
-                      to={`/#${sec.toLowerCase()}`}
-                      onClick={() => setShowMobileMenu(false)}
-                      className='px-4 py-2 rounded-full inline-block cursor-pointer hover:bg-gray-100 w-full text-center'
-                    >
-                      {sec === "Header" ? "Home" : sec}
-                    </Link>
-                  )
-                }
-              })}
-
-              {/* Sign Up Button for Mobile */}
-              <Link to="/signup" onClick={() => setShowMobileMenu(false)} className='px-4 py-2 rounded-full inline-block bg-blue-600 text-white w-full text-center'>
-                Sign Up
-              </Link>
-            </ul>
-          </div>
         </div>
       </div>
-    </motion.div>
+
+      {/* ── Mobile menu ── */}
+      {showMobileMenu && (
+        <div className="fixed inset-0 z-[9999]">
+          {/* Backdrop */}
+          <div onClick={closeMobileMenu} className="absolute inset-0 bg-black/50" />
+
+          {/* Sliding panel */}
+          <div className="absolute right-0 top-0 bottom-0 w-3/4 max-w-xs bg-white shadow-2xl flex flex-col">
+
+            {/* Panel header */}
+            <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+              <div className="flex items-center gap-2.5">
+                <img src={assets.logo2} alt="Afri Kan-Excel" className="w-8 h-8" />
+                <div className="flex flex-col">
+                  <span className="text-sm font-bold text-gray-800 leading-tight">Afri Kan-Excel</span>
+                  <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-brand">Renaissance Foundation</span>
+                </div>
+              </div>
+              <img
+                src={assets.cross_icon}
+                alt="Close menu"
+                onClick={closeMobileMenu}
+                className="w-5 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </div>
+
+            {/* Nav links */}
+            <ul className="flex flex-col gap-1 px-4 py-4 flex-1 overflow-y-auto">
+              {sections.map(sec => (
+                <li key={sec} className="w-full">
+                  <div className="px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors text-gray-700 font-medium text-base cursor-pointer">
+                    <NavItem sec={sec} isHome={isHome} onClick={closeMobileMenu} />
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            {/* Sign up pinned at bottom */}
+            <div className="px-4 py-5 border-t border-gray-100">
+              <Link
+                to="/signup"
+                onClick={closeMobileMenu}
+                className="block w-full text-center py-3 rounded-full bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors"
+              >
+                Sign Up →
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      )}
+    </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-// // Navbar.jsx
-// import React, { useState, useEffect } from 'react'
-// import { Link } from 'react-router-dom'
-// import { assets } from '../assets/assets'
-// import { motion } from 'framer-motion'
-// import { Link as ScrollLink } from 'react-scroll'
-
-// export default function Navbar({ isSticky }) {
-//   const [showMobileMenu, setShowMobileMenu] = useState(false)
-
-//   // Lock scroll when mobile menu is open
-//   useEffect(() => {
-//     document.body.style.overflow = showMobileMenu ? 'hidden' : 'auto'
-//     return () => { document.body.style.overflow = 'auto' }
-//   }, [showMobileMenu])
-
-//   // List of internal sections
-//   const sections = ["Header", "About", "Programs", "Testimonials", "Volunteer", "Team", "Gallery", "Contact"]
-
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0, y: -20 }}
-//       animate={{ opacity: 1, y: 0 }}
-//       transition={{ duration: 0.6 }}
-//       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-//         isSticky ? 'bg-white shadow-md' : 'bg-transparent'
-//       }`}
-//     >
-//       <div className='container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32'>
-//         {/* Logo */}
-//         <Link to="/">
-//           <img
-//             src={assets.logo2}
-//             alt="Afri Kan-excel"
-//             className={`w-10 h-10 cursor-pointer`}
-//           />
-//         </Link>
-
-      
-
-
-      
-//         {/* Desktop Menu */}
-//        <ul className={`hidden md:flex gap-7 ${isSticky ? 'text-gray-800' : 'text-white'}`}>
-//   {sections.map((sec) => {
-//     if (sec === "Gallery") {
-//       return (
-//         <Link
-//           key={sec}
-//           to="/gallery"
-//           className="cursor-pointer hover:text-gray-400"
-//         >
-//           {sec}
-//         </Link>
-//       )
-//     } else {
-//       return (
-//         <Link
-//           key={sec}
-//           to={`/#${sec.toLowerCase()}`} // navigate to home page section
-//           className="cursor-pointer hover:text-gray-400"
-//         >
-//           {sec === "Header" ? "Home" : sec}
-//         </Link>
-//       )
-//     }
-//   })}
-// </ul>
-
-
-
-//         {/* Sign Up Button */}
-//         <Link to="/signup">
-//           <button className={`hidden md:block px-8 py-2 rounded-full transition ${
-//             isSticky ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-white text-gray-800 hover:bg-gray-100'
-//           }`}>
-//             Sign Up
-//           </button>
-//         </Link>
-        
-
-//         {/* Mobile Menu Icon */}
-//         <img
-//           onClick={() => setShowMobileMenu(true)}
-//           src={assets.menu_icon}
-//           alt="menu"
-//           className={`md:hidden w-7 cursor-pointer ${isSticky ? '' : 'invert'}`}
-//         />
-
-//         {/* Mobile Menu Panel */}
-//         <div className={`md:hidden fixed inset-0 z-40 ${showMobileMenu ? '' : 'pointer-events-none'}`}>
-//           {/* Backdrop */}
-//           <div
-//             onClick={() => setShowMobileMenu(false)}
-//             className={`absolute inset-0 bg-black/40 transition-opacity ${showMobileMenu ? 'opacity-100' : 'opacity-0'}`}
-//           />
-
-//           {/* Sliding Panel */}
-//           <div className={`absolute right-0 top-0 bottom-0 w-3/4 max-w-xs bg-white shadow-lg transform transition-transform ${showMobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
-//             <div className='flex justify-end p-6 cursor-pointer'>
-//               <img onClick={() => setShowMobileMenu(false)} src={assets.cross_icon} className='w-6' alt="close" />
-//             </div>
-
-//             <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
-             
-//                       {sections.map((sec) =>
-//             sec === "Gallery" ? (
-//               <Link
-//                 key={sec}
-//                 to="/gallery"
-//                 onClick={() => setShowMobileMenu(false)}
-//                 className='px-4 py-2 rounded-full inline-block cursor-pointer hover:bg-gray-100 w-full text-center'
-//               >
-//                 Gallery
-//               </Link>
-//             ) : (
-//               <ScrollLink
-//                 key={sec}
-//                 to={sec}
-//                 smooth={true}
-//                 duration={900}
-//                 onClick={() => setShowMobileMenu(false)}
-//                 className='px-4 py-2 rounded-full inline-block cursor-pointer hover:bg-gray-100 w-full text-center'
-//               >
-//                 {sec === "Header" ? "Home" : sec}
-//               </ScrollLink>
-//             )
-//           )}
-
-//               {/* Sign Up Button for Mobile */}
-//               <Link to="/signup" onClick={() => setShowMobileMenu(false)} className='px-4 py-2 rounded-full inline-block bg-blue-600 text-white w-full text-center'>
-//                 Sign Up
-//               </Link>
-//             </ul>
-//           </div>
-//         </div>
-//       </div>
-//     </motion.div>
-//   )
-// }

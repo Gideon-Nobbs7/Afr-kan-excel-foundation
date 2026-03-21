@@ -1,5 +1,6 @@
 import React from "react"
 import { Routes, Route } from "react-router-dom"
+import './index.css'
 
 import MetaTags from "./components/MetaTags"
 import Header from "./components/Header"
@@ -16,6 +17,7 @@ import Signup from "./components/Signup"
 import OurStory from "./components/OurStory"
 import OurWork from "./components/OurWork"
 import OperationalStructure from "./components/OperationalStructure"
+import ProjectDetails from './components/ProjectDetails'
 
 
 
@@ -32,6 +34,7 @@ function Home() {
       <Contact />
       <Team />
       <Footer />
+ 
     </>
   )
 }
@@ -47,6 +50,9 @@ export default function App() {
         <Route path="/work" element={<OurWork />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/operational-structure" element={<OperationalStructure />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:id" element={<ProjectDetails />} /> 
+        
       </Routes>
     </>
   )
