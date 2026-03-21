@@ -142,8 +142,8 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-xs text-gray-500 mb-0.5">Email</p>
-                <a href="mailto:info@afrikan-excel.org" className="text-sm text-gray-400 hover:text-brand transition-colors">
-                  info@afrikan-excel.org
+                <a href="mailto:info@afrikanexcel.org" className="text-sm text-gray-400 hover:text-brand transition-colors">
+                  info@afrikanexcel.org
                 </a>
               </div>
             </li>
