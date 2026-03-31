@@ -3,6 +3,7 @@ import { Link as ScrollLink } from 'react-scroll'
 import Navbar from './Navbar'
 import hero from '../assets/afkr10.jpg'
 
+
 // Animated counter hook
 function useCounter(target, duration = 2000, start = false) {
   const [count, setCount] = useState(0)
@@ -23,8 +24,8 @@ function useCounter(target, duration = 2000, start = false) {
 }
 
 const stats = [
-  { value: 3000, suffix: "+", label: "Youth Trained" },
-  { value: 5,    suffix: "+", label: "Communities Reached" },
+  { value: 3000, suffix: "+", label: "Youths Empowered" },
+  { value: 9,    suffix: "+", label: "Communities Reached" },
   { value: 2022, suffix: "",  label: "Year Founded" },
 ]
 

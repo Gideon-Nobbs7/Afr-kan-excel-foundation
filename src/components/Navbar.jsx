@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
 import { assets } from '../assets/assets'
 
-const sections = ["Header", "About", "Programs", "Testimonials", "Volunteer", "Team", "Gallery", "Contact"]
+const sections = ["Header", "About", "Projects", "Testimonials", "Team", "Gallery", "Contact"]
 
 function NavItem({ sec, isHome, onClick }) {
   const label = sec === "Header" ? "Home" : sec

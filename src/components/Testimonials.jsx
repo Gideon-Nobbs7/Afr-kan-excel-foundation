@@ -59,7 +59,7 @@ function TestimonialCard({ t, index }) {
         <img
           src={t.image}
           alt={t.alt || t.name}
-          className="w-11 h-11 rounded-full object-cover ring-2 ring-brand/20 group-hover:ring-brand/50 transition-all"
+          className="w-20 h-20 rounded-full object-cover ring-2 ring-brand/20 group-hover:ring-brand/50 transition-all"
         />
         <div>
           <p className="font-semibold text-gray-800 text-sm">{t.name}</p>

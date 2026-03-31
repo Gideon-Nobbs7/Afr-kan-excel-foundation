@@ -17,6 +17,14 @@ import afkr7 from './afkr7.jpg'
 import afkr8 from './afkr8.jpg'
 import afkr9 from './afkr9.jpg'
 import afkr10 from './afkr10.jpg'
+import agileCommunity from './agile-community.jpg'
+import communityIntelligence from './community-intelligence.jpg'
+import manifestoMovement from './manifesto-movement.jpg'
+import josephBandoh from './joseph-bandoh-knust-basic-school.jpg'
+import opokuPeprah from './opoku-peprah-head-bosomtwe.jpg'
+import richObeng from './past-rich-obeng.jpg'
+import supiirElisha from './supiir-elisha-commonwealth.jpg'
+
 
 export const assets = {
   logo,
@@ -38,48 +46,56 @@ export const assets = {
   afkr8,
   afkr9,
   afkr10,
+  agileCommunity,
+  communityIntelligence,
+  manifestoMovement,
+  josephBandoh,
+  opokuPeprah,
+  richObeng,
+  supiirElisha
+
+
+  
+  
 }
 
 
 export const projectsData = [
   {
-    id: "community-health-outreach-kumasi",
-    title: "Community Health Outreach - Kumasi",
-    date: "Jun 2024",
+    id: "the-foundation-solidarity",
+    title: "The Foundation of Solidarity",
+    date: "2022-2024",
     location: "Kumasi, Ghana",
-    description: "Mobile clinics providing basic health screenings and health education to remote communities.",
+    description: "Providing immediate support to those in need. We focused on being present.",
     image: afkr2,
  
     // ── Extra detail fields ──
-    fullDescription: `In June 2024, our team deployed mobile health clinics across five remote communities in the Ashanti Region. Over 600 residents received free health screenings including blood pressure checks, malaria testing, and nutritional assessments. Community health volunteers were also trained to sustain basic care long after our visit.`,
+    fullDescription: `We established a deep, personal presence in five local areas in Accra -Ghana( Hobor, Akutuase, Adator, Addyman and Odenkey) building friendships that still exist today. We Directly supported over 95 people with essential resources, food and solidarity.`,
     impact: [
-      "600+ residents screened",
-      "5 communities reached",
-      "30 health volunteers trained",
-      "200 malaria test kits distributed",
+      "95+ Individuals",
+      "5 communities reached"
     ],
-    gallery: [afkr2],  // add more images here as needed
-    category: "Health",
-    status: "Completed",
+    gallery: [afkr2,],   // add more images here as needed
+    category: "Philantropy",
+    status: "",
   },
   {
-    id: "youth-entrepreneurship-workshop",
-    title: "Youth Entrepreneurship Workshop",
-    date: "Sep 2024",
-    location: "Accra, Ghana",
-    description: "Training sessions and mentorship for young entrepreneurs to build sustainable small businesses.",
-    image: afkr3,
+    id: "my-manifesto-movement",
+    title: "The 'My Manifesto' Movement",
+    date: "2025",
+    location: "Ashanti, Ghana",
+    description: "Training 3,000+ youth in Civic Responsibility, Cultural Intelligence (CQ), and Leadership.",
+    image: manifestoMovement,
  
-    fullDescription: `Our Youth Entrepreneurship Workshop in Accra brought together 80 young people aged 18–30 for an intensive three-day programme. Participants learned business planning, financial literacy, and digital marketing skills. Ten selected participants received seed funding and ongoing mentorship to launch their ventures.`,
+    fullDescription: `Training 3,000+ youth in Civic Responsibility, Cultural Intelligence (CQ), and Leadership. Transitioning youth from passive beneficiaries to High-Integrity Stewards of their communities.`,
     impact: [
-      "80 young entrepreneurs trained",
-      "3-day intensive programme",
-      "10 businesses received seed funding",
-      "Ongoing mentorship for all graduates",
+      "Training 3,000+ youth in Civic Responsibility",
+      "Cultural Intelligence (CQ)",
+      "Leadership",
     ],
     gallery: [afkr3],
-    category: "Education",
-    status: "Completed",
+    category: "Sanitation",
+    status: "",
   },
   {
     id: "school-renovation-supplies-drive",
@@ -98,52 +114,68 @@ export const projectsData = [
     ],
     gallery: [afkr4],
     category: "Education",
-    status: "Completed",
+    status: "",
   },
   {
-    id: "school-renovation-supplies-drive",
-    title: "School Renovation & Supplies Drive",
+    id: "the-community-intelligence",
+    title: "The Community Intelligence (2026)",
     date: "Dec 2023",
-    location: "Tamale, Ghana",
-    description: "Renovated classrooms and delivered learning materials to improve study conditions for students.",
-    image: afkr4,
+    location: "Ashanti, Ghana",
+    description: "Data research and report on Cultural Intelligence & Youth Agency .We believe that a lasting impact is built on trust, data and coordinated action",
+    image: communityIntelligence,
  
-    fullDescription: `In December 2023, volunteers renovated four classrooms at a primary school in Tamale, repainting walls, fixing roofing, and installing new furniture. Over 500 sets of learning materials including textbooks, exercise books, and stationery were donated to students across three grade levels.`,
+    fullDescription: `The GWILAY Initiative: A deep-dive Research and Report into Social Capital. By mapping what our communities value and love about one another, we are creating a new "Data Currency" for impact that recognises indigenous identity`,
     impact: [
-      "4 classrooms fully renovated",
-      "500+ students received supplies",
-      "3 grade levels covered",
-      "20 volunteers participated",
+      "Providing Cultural Intelligence ",
+      "creation of a new Data Currency",
+      "A deep-dive Research",
+      "Data research and report ",
     ],
     gallery: [afkr4],
-    category: "Education",
-    status: "Completed",
+    category: "Data Research",
+    status: "",
   },
 ];
 
 export const testimonialsData = [
   {
-    name: "Amina Owusu",
-    title: "Community Leader",
-    image: afkr8,
-    alt: "Portrait of Amina Owusu",
+    name: "Mr. Opoku Peprah",
+    title: "HEADMASTER - BOSOMTWE OYOKO SENIOR HIGH SCHOOL",
+    image: opokuPeprah,
+    alt: "Portrait of Mr. Opoku Peprah",
     rating: 5,
-    text: "The foundation's team worked closely with our community to deliver sustainable solutions. Their support has been transformational."
+    text: "As a former District Chief Executive(DCE) , I've seen many youth groups come and go. AERF is different. They don't just show up when there's a problem; they build the skills to prevent one. When they visited my school, I saw a spark ignite in my students that every community needs. Without a second thought, I believe AERF deserves the investment to scale this impact"
   },
   {
-    name: "Kwame Mensah",
-    title: "Teacher",
-    image: afkr9,
-    alt: "Portrait of Kwame Mensah",
+    name: "Ing. Richard Obeng",
+    title: "HEADPASTOR AND FOUNDER OF GLORY INTERCONTINENTAL CHURCH",
+    image: richObeng,
+    alt: "Portrait of Ing. Richard Obeng",
     rating: 5,
-    text: "Their school renovation project gave our students a safe and inspiring place to learn. We are very grateful."
+    text: "It was an honor to chair the AERF launching ceremony. What struck me wasn't just the energy in the room, but the sheer discipline of the team. This is an institution built to last, and I am proud to stand behind their mission"
   },
   {
-    name: "Alhassan Abdul",
-    title: "Small Business Owner",
-    image: afkr10,
-    alt: "Portrait of Alhassan Abdul",
+    name: "Mr. Joseph Bandoh",
+    title: "TUTOR - KNUST BASIC SCHOOL",
+    image: josephBandoh,
+    alt: "Portrait of Mr. Joseph Bandoh",
     rating: 5,
     text: "After the entrepreneurship workshops I received mentorship and seed funding that helped me grow my business."
+  },
+  {
+    name: "Npoangnan Supiir Elisha",
+    title: "CHAIRPERSON, COMMONWEALTH- YOUTH LEADERSHIP AND CAPACITY SUBCOMMITTEE.",
+    image: supiirElisha,
+    alt: "Portrait Supiir Elisha",
+    rating: 5,
+    text: "I've sat on their panels twice, and here's the truth: while everyone else is still debating, these guys are out there doing it. If you want to see what real youth leadership looks like in practice, this is it."
+  },
+  {
+    name: "ELLEN AGYEMANG",
+    title: "HIGH SCHOOL STUDENT",
+    // image: supiirElisha,
+    alt: "Portrait of Ellen Agyemang",
+    rating: 5,
+    text: "Before AERF came to my school, I thought leadership was only for people with titles or big offices. They showed me that if I see a problem in my community, I don't have to wait for anyone, I can start fixing it myself. They gave us the confidence to actually lead. Now, I’m not just waiting for the future anymore"
   }
 ];

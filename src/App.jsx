@@ -29,7 +29,7 @@ function Home() {
       <About />
       <Projects />
       <Testimonials />
-      <Volunteer />
+      {/* <Volunteer /> */}
       <Donate />
       <Contact />
       <Team />
@@ -51,6 +51,7 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/operational-structure" element={<OperationalStructure />} />
         <Route path="/projects" element={<Projects />} />
+        {/* <Route path="/volunteer" element={<Volunteer />} /> */}
         <Route path="/projects/:id" element={<ProjectDetails />} /> 
         
       </Routes>

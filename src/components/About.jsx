@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from "react-router-dom"
 import afkr4 from '../assets/afkr4.jpg'
+import manifestoMovement from '../assets/manifesto-movement.jpg'
 
 // ── Animated counter hook ──
 function useCounter(target, duration = 2000, start = false) {
@@ -56,8 +57,8 @@ function StatItem({ value, suffix, label, animate, delay }) {
 
 const stats = [
   { value: 3,  suffix: "+", label: "Years of Service" },
-  { value: 20,  suffix: "+", label: "Communities Reached" },
-  { value: 2, suffix: "+", label: " Partners" },
+  // { value: 9,  suffix: "+", label: "Communities Reached" },
+  // { value: 2, suffix: "+", label: " Partners" },
   { value: 5,  suffix: "+", label: "Projects Completed" },
 ]
 
@@ -105,7 +106,7 @@ export default function About() {
           }}
         >
           <img
-            src={afkr4}
+            src={manifestoMovement}
             alt="Community program"
             loading="lazy"
             decoding="async"
