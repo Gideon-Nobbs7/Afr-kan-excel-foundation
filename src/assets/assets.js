@@ -24,6 +24,20 @@ import josephBandoh from './joseph-bandoh-knust-basic-school.jpg'
 import opokuPeprah from './opoku-peprah-head-bosomtwe.jpg'
 import richObeng from './past-rich-obeng.jpg'
 import supiirElisha from './supiir-elisha-commonwealth.jpg'
+import sanitation1 from './sanitation-1.jpg'
+import sanitation2 from './sanitation-2.jpg'
+import sanitation3 from './sanitation-3.jpg'
+import sanitation4 from './sanitation-4.jpg'
+import manifesto1 from './manifesto-1.jpg'
+import manifesto2 from './manifesto-2.jpg'
+import manifesto3 from './manifesto-3.jpg'
+import manifesto4 from './manifesto-4.jpg'
+import manifesto5 from './manifesto-5.jpg'
+import manifesto6 from './manifesto-6.jpg'
+import manifesto7 from './manifesto-7.jpg'
+import manifesto8 from './manifesto-8.jpg'
+import manifesto9 from './manifesto-9.jpg'
+import manifesto10 from './manifesto-10.jpg'
 
 
 export const assets = {
@@ -52,8 +66,21 @@ export const assets = {
   josephBandoh,
   opokuPeprah,
   richObeng,
-  supiirElisha
-
+  supiirElisha,
+  sanitation1,
+  sanitation2,
+  sanitation3,
+  sanitation4,
+  manifesto1,
+  manifesto2,
+  manifesto3,
+  manifesto4,
+  manifesto5,
+  manifesto6,
+  manifesto7,
+  manifesto8,
+  manifesto9,
+  manifesto10,
 
   
   
@@ -93,27 +120,27 @@ export const projectsData = [
       "Cultural Intelligence (CQ)",
       "Leadership",
     ],
-    gallery: [afkr3],
-    category: "Sanitation",
+    gallery: [manifesto1, manifesto2, manifesto3, manifesto4, manifesto5, manifesto6, manifesto7, manifesto8, manifesto9, manifesto10],
+    category: "Education",
     status: "",
   },
   {
-    id: "school-renovation-supplies-drive",
-    title: "School Renovation & Supplies Drive",
-    date: "Dec 2023",
-    location: "Tamale, Ghana",
-    description: "Renovated classrooms and delivered learning materials to improve study conditions for students.",
-    image: afkr4,
+    id: "agile-community-action",
+    title: "Agile Community Action",
+    date: "Jan 2026",
+    location: "Ashanti, Ghana",
+    description: "AERF thrives on partnerships that align with our core values of integrity and civic pride.",
+    image: agileCommunity,
  
-    fullDescription: `In December 2023, volunteers renovated four classrooms at a primary school in Tamale, repainting walls, fixing roofing, and installing new furniture. Over 500 sets of learning materials including textbooks, exercise books, and stationery were donated to students across three grade levels.`,
+    fullDescription: `AERF thrives on partnerships that align with our core values of integrity and civic pride. With the 'COMMUNITY' as our founding partner, we maintain the agility to engage in tactical, community-led projects that produce immediate results..A collaborative initiative executed to demonstrate the physical application of Civic Responsibility. This project proved that a trained youth force is the most effective tool for community transformation.`,
     impact: [
-      "4 classrooms fully renovated",
-      "500+ students received supplies",
-      "3 grade levels covered",
-      "20 volunteers participated",
+      "The January 2026 Sanitation Drive",
+      "A collaborative initiative",
+      "Trained youth force",
+      "20+ volunteers participated",
     ],
-    gallery: [afkr4],
-    category: "Education",
+    gallery: [sanitation1, sanitation2, sanitation3, sanitation4],
+    category: "Sanitation",
     status: "",
   },
   {
@@ -156,11 +183,11 @@ export const testimonialsData = [
   },
   {
     name: "Mr. Joseph Bandoh",
-    title: "TUTOR - KNUST BASIC SCHOOL",
+    title: "SENIOR TUTOR - KNUST BASIC SCHOOL",
     image: josephBandoh,
     alt: "Portrait of Mr. Joseph Bandoh",
     rating: 5,
-    text: "After the entrepreneurship workshops I received mentorship and seed funding that helped me grow my business."
+    text: "Following them since day one only reminds me of one thing: Development isn't something done for young people—it's something done by them. AERF is the clear institutional symbol for this."
   },
   {
     name: "Npoangnan Supiir Elisha",
@@ -168,14 +195,14 @@ export const testimonialsData = [
     image: supiirElisha,
     alt: "Portrait Supiir Elisha",
     rating: 5,
-    text: "I've sat on their panels twice, and here's the truth: while everyone else is still debating, these guys are out there doing it. If you want to see what real youth leadership looks like in practice, this is it."
+    text: "I have had the privilege of serving on their panels on two occasions, and I can attest to this: while many remain engaged in deliberation, this group is actively finding solutions. For anyone seeking a practical demonstration of effective youth leadership, this stands as a compelling example."
   },
-  {
-    name: "ELLEN AGYEMANG",
-    title: "HIGH SCHOOL STUDENT",
-    // image: supiirElisha,
-    alt: "Portrait of Ellen Agyemang",
-    rating: 5,
-    text: "Before AERF came to my school, I thought leadership was only for people with titles or big offices. They showed me that if I see a problem in my community, I don't have to wait for anyone, I can start fixing it myself. They gave us the confidence to actually lead. Now, I’m not just waiting for the future anymore"
-  }
+  // {
+  //   name: "ELLEN AGYEMANG",
+  //   title: "HIGH SCHOOL STUDENT",
+  //   // image: supiirElisha,
+  //   alt: "Portrait of Ellen Agyemang",
+  //   rating: 5,
+  //   text: "Before AERF came to my school, I thought leadership was only for people with titles or big offices. They showed me that if I see a problem in my community, I don't have to wait for anyone, I can start fixing it myself. They gave us the confidence to actually lead. Now, I’m not just waiting for the future anymore"
+  // }
 ];
