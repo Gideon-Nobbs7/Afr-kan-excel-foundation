@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link as ScrollLink } from 'react-scroll'
 import Navbar from './Navbar'
+import AnnouncementBanner from './AnnouncementBanner'
 import hero from '../assets/afkr10.jpg'
 
 
@@ -44,10 +45,16 @@ function StatItem({ value, suffix, label, animate }) {
 }
 
 export default function Header() {
-  const [isSticky, setIsSticky]     = useState(false)
-  const [mounted, setMounted]       = useState(false)
+  const [isSticky, setIsSticky]         = useState(false)
+  const [mounted, setMounted]           = useState(false)
   const [statsVisible, setStatsVisible] = useState(false)
+  const [showBanner, setShowBanner]     = useState(() => sessionStorage.getItem('nya-banner-dismissed') !== 'true')
   const statsRef = useRef(null)
+
+  const dismissBanner = () => {
+    sessionStorage.setItem('nya-banner-dismissed', 'true')
+    setShowBanner(false)
+  }
 
   // Sticky navbar
   useEffect(() => {
@@ -75,8 +82,9 @@ export default function Header() {
   }, [])
 
   return (
-    <div className="relative w-full" id="Header">
-      <Navbar isSticky={isSticky} />
+    <div className="relative w-full" id="Header" style={{ paddingTop: showBanner ? '40px' : '0' }}>
+      {showBanner && <AnnouncementBanner onDismiss={dismissBanner} />}
+      <Navbar isSticky={isSticky} bannerVisible={showBanner} />
 
       {/* Hero */}
       <div

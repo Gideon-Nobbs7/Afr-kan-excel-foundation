@@ -18,6 +18,7 @@ import OurStory from "./components/OurStory"
 import OurWork from "./components/OurWork"
 import OperationalStructure from "./components/OperationalStructure"
 import ProjectDetails from './components/ProjectDetails'
+import Partners from './components/Partners'
 
 
 
@@ -28,6 +29,7 @@ function Home() {
       <Header />
       <About />
       <Projects />
+      <Partners />
       <Testimonials />
       {/* <Volunteer /> */}
       <Donate />

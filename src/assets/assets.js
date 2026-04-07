@@ -17,13 +17,21 @@ import afkr7 from './afkr7.jpg'
 import afkr8 from './afkr8.jpg'
 import afkr9 from './afkr9.jpg'
 import afkr10 from './afkr10.jpg'
+
+//projects gallery images
 import agileCommunity from './agile-community.jpg'
+import philantropy from './philantropy.jpg'
 import communityIntelligence from './community-intelligence.jpg'
 import manifestoMovement from './manifesto-movement.jpg'
+
+// testimonial images
 import josephBandoh from './joseph-bandoh-knust-basic-school.jpg'
 import opokuPeprah from './opoku-peprah-head-bosomtwe.jpg'
 import richObeng from './past-rich-obeng.jpg'
+import pastorRichard from './pastorRichard.jpg'
 import supiirElisha from './supiir-elisha-commonwealth.jpg'
+
+// sanitation gallery
 import sanitation1 from './sanitation-1.jpg'
 import sanitation2 from './sanitation-2.jpg'
 import sanitation3 from './sanitation-3.jpg'
@@ -38,6 +46,17 @@ import manifesto7 from './manifesto-7.jpg'
 import manifesto8 from './manifesto-8.jpg'
 import manifesto9 from './manifesto-9.jpg'
 import manifesto10 from './manifesto-10.jpg'
+// philanthropy gallery
+import philantropy2 from './philantropy-2.jpg'
+import philantropy3 from './philantropy-3.jpg'
+import philantropy4 from './philantropy-4.jpg'
+
+// team images
+import andy from './Andy.jpg'
+import agnes from './Agnes.jpg'
+import cosmos from './Cosmos.jpg'
+
+
 
 
 export const assets = {
@@ -66,6 +85,7 @@ export const assets = {
   josephBandoh,
   opokuPeprah,
   richObeng,
+  pastorRichard,
   supiirElisha,
   sanitation1,
   sanitation2,
@@ -81,6 +101,13 @@ export const assets = {
   manifesto8,
   manifesto9,
   manifesto10,
+  philantropy,
+  philantropy2,
+  philantropy3,
+  philantropy4,
+  andy,
+  agnes,
+  cosmos,
 
   
   
@@ -94,7 +121,7 @@ export const projectsData = [
     date: "2022-2024",
     location: "Kumasi, Ghana",
     description: "Providing immediate support to those in need. We focused on being present.",
-    image: afkr2,
+    image: philantropy,
  
     // ── Extra detail fields ──
     fullDescription: `We established a deep, personal presence in five local areas in Accra -Ghana( Hobor, Akutuase, Adator, Addyman and Odenkey) building friendships that still exist today. We Directly supported over 95 people with essential resources, food and solidarity.`,
@@ -102,7 +129,7 @@ export const projectsData = [
       "95+ Individuals",
       "5 communities reached"
     ],
-    gallery: [afkr2,],   // add more images here as needed
+    gallery: [philantropy2, philantropy3, philantropy4],   // add more images here as needed
     category: "Philantropy",
     status: "",
   },
@@ -178,6 +205,7 @@ export const testimonialsData = [
     title: "HEADPASTOR AND FOUNDER OF GLORY INTERCONTINENTAL CHURCH",
     image: richObeng,
     alt: "Portrait of Ing. Richard Obeng",
+    objectPosition: "top",
     rating: 5,
     text: "It was an honor to chair the AERF launching ceremony. What struck me wasn't just the energy in the room, but the sheer discipline of the team. This is an institution built to last, and I am proud to stand behind their mission"
   },

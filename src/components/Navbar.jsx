@@ -31,7 +31,7 @@ function NavItem({ sec, isHome, onClick }) {
   )
 }
 
-export default function Navbar({ isSticky }) {
+export default function Navbar({ isSticky, bannerVisible }) {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const location = useLocation()
   const isHome = location.pathname === "/"
@@ -46,7 +46,7 @@ export default function Navbar({ isSticky }) {
   return (
     <>
       {/* ── Navbar bar ── */}
-      <div className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isSticky ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+      <div className={`fixed left-0 w-full z-50 transition-all duration-300 ${bannerVisible ? 'top-10' : 'top-0'} ${isSticky ? 'bg-white shadow-md' : 'bg-transparent'}`}>
         <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32">
 
           {/* Logo + sticky mobile title */}

@@ -17,9 +17,10 @@ function useInView(threshold = 0.1) {
 }
 
 const team = [
-  { name: 'Ama Boateng',  role: 'Executive Director',    title: 'Founder',        img: assets.afkr8  },
-  { name: 'Kwame Adu',    role: 'Programs Manager',      title: 'Program Lead',   img: assets.afkr9  },
-  { name: 'Fatima Ali',   role: 'Operations Coordinator', title: 'Operations',    img: assets.afkr10 },
+  { name: 'Mr. Andrew Kwabena Agyapong',  role: 'Founder',    title: 'Founder',        img: assets.andy  },
+  { name: 'Ms Agnes Kyerewaa Frimpong',    role: 'Division Lead',      title: 'Division Lead',   img: assets.agnes  },
+  { name: 'Mr. Okyere Cosmos Abeiku',   role: 'Administrator', title: 'Administrator',    img: assets.cosmos },
+  { name: 'Mr. Sie Kofi Eugene',   role: 'Acting Media Manger', title: 'Acting Media Manger',     },
 ]
 
 function TeamCard({ member, index }) {
@@ -49,7 +50,7 @@ function TeamCard({ member, index }) {
         {/* Avatar */}
         <div className="relative mb-5">
           <div
-            className="w-24 h-24 rounded-full overflow-hidden ring-4 ring-brand/10 transition-all duration-300"
+            className="w-24 h-24 rounded-full overflow-hidden ring-3 ring-brand/10 transition-all duration-300"
             style={{ ringColor: hovered ? 'var(--brand)' : undefined }}
           >
             <img
