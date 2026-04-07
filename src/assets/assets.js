@@ -28,7 +28,7 @@ import manifestoMovement from './manifesto-movement.jpg'
 import josephBandoh from './joseph-bandoh-knust-basic-school.jpg'
 import opokuPeprah from './opoku-peprah-head-bosomtwe.jpg'
 import richObeng from './past-rich-obeng.jpg'
-import pastorRichard from './pastorRichard.jpg'
+import pastorRichard from './pastorRichard.JPG'
 import supiirElisha from './supiir-elisha-commonwealth.jpg'
 
 // sanitation gallery
