@@ -17,7 +17,7 @@ function useInView(threshold = 0.1) {
 }
 
 const team = [
-  { name: 'Mr. Andrew Kwabena Agyapong',  role: 'Founder',    title: 'Founder',        img: assets.andy  },
+  { name: 'Mr. Andrew Kwabena Adjapong',  role: 'Founder',    title: 'Founder',        img: assets.andy  },
   { name: 'Ms Agnes Kyerewaa Frimpong',    role: 'Division Lead',      title: 'Division Lead',   img: assets.agnes  },
   { name: 'Mr. Okyere Cosmos Abeiku',   role: 'Administrator', title: 'Administrator',    img: assets.cosmos },
   { name: 'Mr. Sie Kofi Eugene',   role: 'Acting Media Manger', title: 'Acting Media Manger',     },

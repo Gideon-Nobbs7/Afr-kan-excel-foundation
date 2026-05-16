@@ -6,8 +6,8 @@ const partner = {
   logo: nyaLogo,
   tagline: "Official Partner",
   description:
-    "AERF is proud to be in official partnership with the National Youth Authority (NYA) of Ghana. " +
-    "Together, we are committed to empowering young people across the country through targeted programmes, " +
+    "AERF is proud to be in official partnership with the National Youth Authority-Bekwai." +
+    "Together, we are committed to empowering young people across the municipality through targeted programmes," +
     "shared resources, and a united vision for African excellence.",
   website: "https://nya.gov.gh",
   websiteLabel: "Visit National Youth Authority",
